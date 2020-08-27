@@ -26,7 +26,7 @@ export default {
                 {
                   buildHookId: '5f47e57f3b410a70bec59168',
                   title: 'Landing pages Website',
-                  name: 'sanity-nextjs-landing-pages-web-6ekciwdd',
+                  name: 'kryptonunite',
                   apiId: '6b7156d6-62f4-4959-a2e5-014522e1e4ee'
                 }
               ]
