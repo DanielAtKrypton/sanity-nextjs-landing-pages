@@ -18,16 +18,16 @@ export default {
                 'NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.',
               sites: [
                 {
-                  buildHookId: '5f47d9ff7b5df1fd1a15b971',
+                  buildHookId: '5f47e57faaca5575c559084f',
                   title: 'Sanity Studio',
-                  name: 'sanity-nextjs-landing-pages-studio-eznewo87',
-                  apiId: 'b3c3c8d8-6142-4fc9-a1ec-5a01216ae655'
+                  name: 'sanity-nextjs-landing-pages-studio-vxxrrn3u',
+                  apiId: '04bf8eee-878a-4685-8d2a-2159275cc3e9'
                 },
                 {
-                  buildHookId: '5f47d9ff567c36df334d1277',
+                  buildHookId: '5f47e57f3b410a70bec59168',
                   title: 'Landing pages Website',
-                  name: 'sanity-nextjs-landing-pages-web-kb6gmve7',
-                  apiId: '47b4a310-cfc9-4eae-8c16-cd7ec7353b84'
+                  name: 'sanity-nextjs-landing-pages-web-6ekciwdd',
+                  apiId: '6b7156d6-62f4-4959-a2e5-014522e1e4ee'
                 }
               ]
             }
@@ -39,7 +39,7 @@ export default {
             value: 'https://github.com/DanielAtKrypton/sanity-nextjs-landing-pages',
             category: 'Code'
           },
-          {title: 'Frontend', value: 'https://sanity-nextjs-landing-pages-web-kb6gmve7.netlify.app', category: 'apps'}
+          {title: 'Frontend', value: 'https://sanity-nextjs-landing-pages-web-6ekciwdd.netlify.app', category: 'apps'}
         ]
       }
     },
