@@ -39,12 +39,12 @@ export default function Mailchimp (props) {
               }
             }}
             messages={{
-              sending: 'Sending...',
-              success: 'Thank you for subscribing!',
-              error: 'An unexpected internal error has occurred.',
-              empty: 'You must write an e-mail.',
-              duplicate: 'Already subscribed',
-              button: 'Subscribe!'
+              sending: 'Enviando...',
+              success: 'Obrigado por subscrever-se!',
+              error: 'Um erro interno inesperado aconteceu.',
+              empty: 'Você precisa escrever um e-mail.',
+              duplicate: 'Já subscrito',
+              button: 'Subscrever-me!'
             }}
             className={styles.form}
           />

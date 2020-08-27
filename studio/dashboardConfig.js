@@ -39,7 +39,7 @@ export default {
             value: 'https://github.com/DanielAtKrypton/sanity-nextjs-landing-pages',
             category: 'Code'
           },
-          {title: 'Frontend', value: 'https://sanity-nextjs-landing-pages-web-6ekciwdd.netlify.app', category: 'apps'}
+          {title: 'Frontend', value: 'https://kryptonunite.netlify.app', category: 'apps'}
         ]
       }
     },
