@@ -36,7 +36,7 @@ export default {
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/DanielAtKrypton/sanity-nextjs-landing-pages',
+            value: 'https://github.com/krypton-unite/website',
             category: 'Code'
           },
           {title: 'Frontend', value: 'https://kryptonunite.netlify.app', category: 'apps'}
