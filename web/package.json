@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "sanity-nextjs-landing-pages-web",
+  "name": "krypton-unite-website-web",
   "version": "1.0.9",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "Daniel Kaminski de Souza <daniel@kryptonunite.com>",
   "scripts": {
     "dev": "next",
     "build": "next build && next export && node exportSitemap.js",
