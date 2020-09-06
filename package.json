@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sanity-nextjs-landing-pages",
+  "name": "krypton-unite-website",
   "version": "1.0.9",
   "scripts": {
     "build": "lerna run build --parallel",
