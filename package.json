@@ -15,7 +15,7 @@
     "update": "npm update && cd web && npm update && cd ../studio && npm update && cd .."
   },
   "devDependencies": {
-    "@sanity/cli": "^1.150.1",
+    "@sanity/cli": "^1.150.7",
     "lerna": "^3.22.1"
   }
 }

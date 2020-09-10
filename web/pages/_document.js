@@ -19,6 +19,7 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
           <link rel="manifest" href="/static/site.webmanifest" />
+          <script src="https://cdn.sitesearch360.com/v13/sitesearch360-v13.min.js" async></script>
         </Head>
         <body>
           <Main />
