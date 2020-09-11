@@ -5,7 +5,6 @@ import Head from 'next/head'
 import {LogoJsonLd} from 'next-seo'
 import Header from './Header'
 import Footer from './Footer'
-import {SiteSearch360} from './site_search_360'
 
 function Layout (props) {
   const {config, children} = props
@@ -23,7 +22,6 @@ function Layout (props) {
       <Head>
         <meta name='viewport' content='initial-scale=1.0, width=device-width, viewport-fit=cover' />
       </Head>
-      <SiteSearch360 />
       <div className='container'>
         <Header title={title} navItems={mainNavigation} logo={logo} />
         <div className='content'>{children}</div>

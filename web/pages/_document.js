@@ -1,7 +1,6 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import client from '../client'
-import {SiteSearch360InBody} from '../components/site_search_360'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -21,9 +20,14 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/static/site.webmanifest" />
         </Head>
         <body>
-          <SiteSearch360InBody />
           <Main />
           <NextScript />
+          <script type="text/javascript" src="./_search_360.js"></script>
+          <script src="https://cdn.sitesearch360.com/v13/sitesearch360-v13.min.js" async></script>
+          <section role="search" data-ss360="true">
+	          <input type="search" id="searchBox" />
+	          <button id="searchButton" />
+          </section>
         </body>
       </Html>
     )
