@@ -1,7 +1,7 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import client from '../client'
-import SiteSearch360 from './_site_search_360'
+import {SiteSearch360InBody} from '../components/site_search_360'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -10,7 +10,6 @@ export default class MyDocument extends Document {
       return { ...initialProps, lang }
     })
   }
-
   render() {
     return (
       <Html lang={this.props.lang || 'en'}>
@@ -22,7 +21,7 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/static/site.webmanifest" />
         </Head>
         <body>
-          <SiteSearch360 />
+          <SiteSearch360InBody />
           <Main />
           <NextScript />
         </body>
