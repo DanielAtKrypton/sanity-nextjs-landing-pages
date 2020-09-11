@@ -20,14 +20,8 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/static/site.webmanifest" />
         </Head>
         <body>
-          <section role="search" data-ss360="true">
-	          <input type="search" id="searchBox" />
-	          <button id="searchButton" />
-          </section>
           <Main />
           <NextScript />
-          <script type="text/javascript" src="./_search_360.js"></script>
-          <script src="https://cdn.sitesearch360.com/v13/sitesearch360-v13.min.js" async></script>
         </body>
       </Html>
     )
