@@ -2,15 +2,15 @@
 # Credit: https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
 setup_git() {
-  git config --global user.email "automatedtradesystem@kryptonunite.com" > /dev/null 2>&1
-  git config --global user.name "MachineAtKrypton" > /dev/null 2>&1
+  git config --global user.email "automatedtradesystem@kryptonunite.com"
+  git config --global user.name "MachineAtKrypton"
 }
 
 commit_country_json_files() {
   # Current month and year, e.g: Apr 2018
   dateAndMonth=`date "+%b %Y"`
   # Stage the modified files in dist/output
-  git add -f . > /dev/null 2>&1
+  git add .
   # Create a new commit with a custom build message
   # with "[skip ci]" to avoid a build loop
   # and Travis build number for reference
@@ -19,10 +19,10 @@ commit_country_json_files() {
 
 upload_files() {
   # Remove existing "origin"
-  git remote rm origin > /dev/null 2>&1
+  git remote rm origin
   # Add new "origin" with access token in the git URL for authentication
-  git remote add origin https://krypton-unite:$2@github.com/krypton-unite/website.git > /dev/null 2>&1
-  git push origin $1 --quiet > /dev/null 2>&1
+  git remote add origin https://krypton-unite:$2@github.com/krypton-unite/website.git
+  git push origin $1 --quiet
 }
 
 setup_git
