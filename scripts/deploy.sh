@@ -7,6 +7,7 @@ setup_git() {
 }
 
 commit_country_json_files() {
+  git fetch
   git checkout production
   # Current month and year, e.g: Apr 2018
   dateAndMonth=`date "+%b %Y"`
