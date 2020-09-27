@@ -15,9 +15,6 @@ after_install:
 deploy:
 # deploy master to production
  - provider: script
-   script: bash scripts/deploy.sh production
-   skip_cleanup: true
-   github_token: $github_token
-   local_dir: build
+   script: bash scripts/deploy.sh production "https://$GH_DEPLOY_KEY@github.com/krypton-unite/website.git"
    on:
      branch: master
