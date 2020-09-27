@@ -1,5 +1,5 @@
 #!/bin/sh
 
-git checkout production
+git checkout $1
 git reset --hard master
-git push -f origin production
+git push -f origin $1
