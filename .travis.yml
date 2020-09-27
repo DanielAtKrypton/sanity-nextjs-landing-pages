@@ -14,6 +14,6 @@ after_install:
 
 # deploy master to production
 - provider: script
-  script: bash scripts/deploy.sh production
+  script: bash ./scripts/deploy.sh production
   on:
     branch: master
