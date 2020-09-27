@@ -23,7 +23,7 @@ upload_files() {
   git remote rm origin > /dev/null 2>&1
   # Add new "origin" with access token in the git URL for authentication
   git remote add origin https://krypton-unite:$2@github.com/krypton-unite/website.git > /dev/null 2>&1
-  git push origin production --quiet > /dev/null 2>&1
+  git push origin $1 --quiet > /dev/null 2>&1
 }
 
 setup_git
