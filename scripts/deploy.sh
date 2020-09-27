@@ -11,11 +11,11 @@ commit_country_json_files() {
   # Current month and year, e.g: Apr 2018
   dateAndMonth=`date "+%b %Y"`
   # Stage the modified files in dist/output
-  git add -f dist/output/*.json > /dev/null 2>&1
+  git add -f . > /dev/null 2>&1
   # Create a new commit with a custom build message
   # with "[skip ci]" to avoid a build loop
   # and Travis build number for reference
-  git commit -a -m "Travis update: $dateAndMonth (Build $TRAVIS_BUILD_NUMBER)" -m "[skip ci]" > /dev/null 2>&1
+  git commit -m "Travis update: $dateAndMonth (Build $TRAVIS_BUILD_NUMBER)" -m "[skip ci]" > /dev/null 2>&1
 }
 
 upload_files() {
