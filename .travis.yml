@@ -6,6 +6,7 @@ node_js:
 
 before_install:
 - npm install
+- npm update
 - npm run build
 
 after_install:
