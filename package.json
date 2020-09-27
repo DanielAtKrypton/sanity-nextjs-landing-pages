@@ -3,9 +3,10 @@
   "name": "krypton-unite-website",
   "version": "1.0.9",
   "scripts": {
-    "build": "lerna run build --parallel",
-    "build-web": "lerna bootstrap && (cd web && npm run build)",
-    "build-studio": "lerna bootstrap && (cd studio && npm run build)",
+    "build" : "run-p builds:**",
+    "builds:main": "lerna run build --parallel",
+    "builds:web": "lerna bootstrap && (cd web && npm run build)",
+    "builds:studio": "lerna bootstrap && (cd studio && npm run build)",
     "dev": "lerna run dev --parallel",
     "format": "lerna run format",
     "graphql-deploy": "lerna run graphql-deploy",

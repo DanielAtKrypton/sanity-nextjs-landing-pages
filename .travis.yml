@@ -14,4 +14,4 @@ after_install:
 
 deploy:
     provider: script
-    script: bash ./scripts/custom_deploy.sh
+    script: bash ./scripts/deploy.sh
