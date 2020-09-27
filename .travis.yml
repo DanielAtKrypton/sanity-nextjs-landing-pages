@@ -13,5 +13,8 @@ after_install:
 # - npm run dev
 
 deploy:
-    provider: script
-    script: bash ./scripts/deploy.sh
+ # deploy master to production
+ - provider: script
+ script: bash scripts/deploy.sh production
+ on:
+   branch: master
