@@ -1,16 +1,18 @@
 language: node_js
 dist: xenial
-
 node_js:
-    - lts/*
-
+- lts/*
 before_install:
 - npm install
 - npm run update
 - npm run build
-
-after_install:
-# - npm run dev
+after_script:
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- node ./node_modules/grunt-cli/bin/grunt release
+env:
+  global:
+    secure: AVR3TXdsIbcKLAnizitcpMVx9kId+w5Gu3FjdB04Wy8DTFY3sauauc7+KmgIEHxoOG2YghwEDe7leyBnWMe5vCS42jLnuYwsVPwwUUUkL/EzioTZBlHARY1Kqs7qUZbvP8d2UHax11QFoFCtkO4nL+ipGn6bcFdUKBCLOSYGQ4jEm3sTtZiJIScjaep4YS7YCofca48LjB521LmN/2Uq1Y/KUe67lPPdwQeYoDqfGCov5lGyUyQqz1Jow612dUpMrjDg19xrTUS3XEwcFOfjIG1Q+M2Su1yWwsCNt7qa/w98VwHRCqmorcKqA84luERIMS/xfVkLYYHq18AcWbTrU6pOO1U6FL73xAuCycuRCXK7tx6me0KrtIoB0+ExxKsxpB+uDwVYmFBPp8IClr9BLKrkUSUeWYlPLH357UCa4id3ag5VjZuHxOlYfJ9Pf+QiTg+H+NwJafe3jsxRBq/nw1u0DH/heKVzhDAgkV4cWfktE+GD1Lu3YmC2E42AcgzdxY31VfZsFTkUCO+2K7Ic1eJ00QxKH4gU11K+1YJ4cVh1v2/H40/cLGOvyzLAh1cOVvLGJLtxj6zooTvoDNbyBy9AAhpuliwR+wtOURFUHlkJamTpqVcfRElBjovGhbLv/K9BmARYMnhWtmu+dDT1uzwATJ26M8q+vfkVhhHarD4=
 
 deploy:
 # deploy master to production
