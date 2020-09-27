@@ -10,15 +10,7 @@ after_script:
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 # - node ./node_modules/grunt-cli/bin/grunt release
-- git checkout production
-  # Current month and year, e.g: Apr 2018
-- dateAndMonth=`date "+%b %Y"`
-  # Stage the modified files in dist/output
-- git add -f dist/output/*.json
-  # Create a new commit with a custom build message
-  # with "[skip ci]" to avoid a build loop
-  # and Travis build number for reference
-# - git commit -m "Travis update: $dateAndMonth (Build $TRAVIS_BUILD_NUMBER)" -m "[skip ci]"
+- bash ./scripts/deploy.sh
 
 env:
   global:
