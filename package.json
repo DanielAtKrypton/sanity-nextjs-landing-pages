@@ -13,7 +13,7 @@
     "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",
     "tests:web": "cd web && npm run test",
-    "tests:studio": "cd studio && npm run build && npm run test",
+    "tests:studio": "cd studio && npm run test",
     "test": "run-p tests:**",
     "updates:this": "npm update",
     "updates:web": "cd web && npm update",
