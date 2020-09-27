@@ -14,7 +14,8 @@ after_install:
 
 deploy:
 # deploy master to production
- - provider: script
+  - skip_cleanup: true 
+  - provider: script
    script: bash scripts/deploy.sh production $GH_DEPLOY_KEY
    on:
      branch: master
