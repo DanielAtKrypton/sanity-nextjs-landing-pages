@@ -13,11 +13,11 @@
     "postinstall": "lerna bootstrap",
     "tests:web": "cd web && npm run test",
     "tests:studio": "cd studio && npm run build && npm run test",
-    "test": "npm-run-all -p tests:**",
+    "test": "run-p tests:**",
     "updates:this": "npm update",
     "updates:web": "cd web && npm update",
     "updates:studio": "cd studio && npm update",
-    "update": "npm-run-all updates:**"
+    "update": "run-p updates:**"
   },
   "devDependencies": {
     "@sanity/cli": "^1.150.7",
