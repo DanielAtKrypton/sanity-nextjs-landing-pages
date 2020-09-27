@@ -8,7 +8,8 @@
     "build": "next build && next export && node exportSitemap.js",
     "format": "prettier-eslint --write \"**/*.js\" \"!.next/**\" \"!node_modules/**\" \"!out/**\"",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "test": "cd studio && npm run test"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
