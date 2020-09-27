@@ -1,1 +1,1 @@
-# sanity-nextjs-landing-pages-studio
+# krypton-unite-website-studio
