@@ -9,6 +9,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  padding-top: 12.5rem;
   padding-bottom: 2rem;
 
   @media (--media-min-medium) {
@@ -33,6 +34,8 @@
   padding: 0 1.5em;
   box-sizing: border-box;
   z-index: 1;
+  /* -webkit-text-stroke: 0.4px black; */
+  /* text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .title {
@@ -40,25 +43,33 @@
   font-weight: 600;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 2px black;
+  /* text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); */
+  text-shadow: -2px 0 5px rgba(255, 255, 255, 0.8), 2px 0 5px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(255, 255, 255, 0.8), 0 -2px 5px rgba(255, 255, 255, 0.8);
+  /* backdrop-filter: blur(10px) brightness(0.6); */
   margin: 0;
   padding: 0;
-  padding-top: 12.5rem;
+  /* padding-top: 12.5rem; */
 
   @media (--media-min-medium) {
     font-size: var(--font-title1-size);
     line-height: var(--font-title1-line-height);
-    padding-top: 15rem;
+    padding-top: 0.3rem;
   }
 }
 
 .tagline {
   position: relative;
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
   margin-top: 0.5em;
-  margin-bottom: 1rem;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 5rem;
+  font-weight: bold;
+  -webkit-text-stroke: 0.8px black;
+  /* text-shadow: 0 5px 5px rgba(0, 0, 0, 1); */
+  text-shadow: -2px 0 5px rgba(0, 0, 0, 0.8), 2px 0 5px rgba(0, 0, 0, 0.8), 0 2px 5px rgba(0, 0, 0, 0.8), 0 -2px 5px rgba(0, 0, 0, 0.8);
+  /* text-shadow: -2px 0 5px rgba(255, 255, 255, 0.8), 2px 0 5px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(255, 255, 255, 0.8), 0 -2px 5px rgba(255, 255, 255, 0.8); */
+  backdrop-filter: blur(10px) brightness(0.8);
 
   @media (--media-min-medium) {
     font-size: var(--font-large-size);
@@ -66,12 +77,19 @@
   }
 }
 
+.content > h1 {
+  margin: 1rem;
+  /* text-align: center; */
+}
+
 .tagline > p {
-  margin: 0;
+  margin: 1rem;
+  text-align: justify;
 }
 
 .ctas {
-  margin-top: 3rem;
+  margin: 1rem;
+  margin-bottom: 1.5rem;
   display: flex;
 }
 

@@ -3,7 +3,7 @@
   "name": "krypton-unite-website",
   "version": "1.0.9",
   "scripts": {
-    "build" : "run-p builds:**",
+    "build": "run-p builds:**",
     "builds:main": "lerna run build --parallel",
     "builds:web": "lerna bootstrap && (cd web && npm run build)",
     "builds:studio": "lerna bootstrap && (cd studio && npm run build)",
@@ -18,7 +18,11 @@
     "updates:this": "npm update",
     "updates:web": "cd web && npm update",
     "updates:studio": "cd studio && npm update",
-    "update": "run-p updates:**"
+    "update": "run-p updates:**",
+    "upgrades:this": "npm upgrade",
+    "upgrades:web": "cd web && npm upgrade",
+    "upgrades:studio": "cd studio && npm upgrade",
+    "upgrade": "run-p upgrades:**"
   },
   "devDependencies": {
     "@sanity/cli": "^1.150.7",
