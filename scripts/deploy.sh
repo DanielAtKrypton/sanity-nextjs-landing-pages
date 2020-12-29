@@ -27,8 +27,8 @@ commit_website_files() {
 
 upload_files() {
   # Add new "origin" with access token in the git URL for authentication
-  git remote add origin-travis https://krypton-unite:${GH_TOKEN}@github.com/krypton-unite/website.git > /dev/null 2>&1
-  git push origin --quiet --set-upstream origin-travis production
+  git remote add origin-workflow $GITHUB_REPOSITORY > /dev/null 2>&1
+  git push origin --quiet --set-upstream origin-workflow production
 }
 
 setup_git
