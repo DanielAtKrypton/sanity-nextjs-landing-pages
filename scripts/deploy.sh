@@ -1,9 +1,3 @@
-#!/bin/bash
-
-git checkout origin $1
-git reset --hard master
-git push deploy $1
-=======
 #!/bin/sh
 # Credit: https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
