@@ -15,10 +15,7 @@ before_install:
 - npm run build
 script:
 - npm run test
-after_success:
-# - git config credential.helper "store --file=.git/credentials"
-# - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- "./scripts/deploy.sh"
-env:
-  global:
-  - secure: ZEsWnS11Omba1Rcw9m9nTJ7+znZN11UgpPKTcsKb5fYrhKz8MuKLiOyf/W8XL+G4b171mVQExrdEb8LoMoFXZl8vubvQ/cwpxQ1fjqbShmo58ovljW3CWuhquLZw/oOwhwY5yKKzuvF4n5CWraQtYu5PFWZjbWpn/tM3NzrEpXI/xwjdPmmv6PsOIxTdULCFFp3suEQc/B2yh6YFN8EFMI3D2ZbykmcBObLAu5A3ydMyccTGLRh0M6TG2cCVIXlAWmMQsb4HF/0nzKnXGtPtcJbqe3C/lWspvJbZkdJUmwfWuWDvPXKSdiXdxfU5tTxtTdpPADtvx3mt7lu/rbB6wTRR/3MpCvFBA57gM5YVnWM/1rV4m/3rdsA0Q+xZP4Pk7sxaZ7D5o1hrnK7VLkexL1e906zOBkByCgJtEn+T+aRZTqkuXGfieDY7hUljhTEBXVtsUw5KEV2DsZDcqtoKawel9qtnhV3bdUNES+9TxOjAuB9HPAHIxKdz/yMF7QGudfonfpmMWPBPZ9otvIyCfya32qF46MJX2pBX3UhFuHTAEs+qrheeKt/1r5nExTgK087lPf2Jdu30WKI6tEf81b1u+7jhj/bK7zSrH4IFH1sNe0U40tSeeHpc/LOBnF7Q7rym4ppTV8ChZPXtfKJK4uPML5NJ7rYWJv3NjUBT+cc=
+deploy:
+  target_branch:
+    - production
+  token: ZEsWnS11Omba1Rcw9m9nTJ7+znZN11UgpPKTcsKb5fYrhKz8MuKLiOyf/W8XL+G4b171mVQExrdEb8LoMoFXZl8vubvQ/cwpxQ1fjqbShmo58ovljW3CWuhquLZw/oOwhwY5yKKzuvF4n5CWraQtYu5PFWZjbWpn/tM3NzrEpXI/xwjdPmmv6PsOIxTdULCFFp3suEQc/B2yh6YFN8EFMI3D2ZbykmcBObLAu5A3ydMyccTGLRh0M6TG2cCVIXlAWmMQsb4HF/0nzKnXGtPtcJbqe3C/lWspvJbZkdJUmwfWuWDvPXKSdiXdxfU5tTxtTdpPADtvx3mt7lu/rbB6wTRR/3MpCvFBA57gM5YVnWM/1rV4m/3rdsA0Q+xZP4Pk7sxaZ7D5o1hrnK7VLkexL1e906zOBkByCgJtEn+T+aRZTqkuXGfieDY7hUljhTEBXVtsUw5KEV2DsZDcqtoKawel9qtnhV3bdUNES+9TxOjAuB9HPAHIxKdz/yMF7QGudfonfpmMWPBPZ9otvIyCfya32qF46MJX2pBX3UhFuHTAEs+qrheeKt/1r5nExTgK087lPf2Jdu30WKI6tEf81b1u+7jhj/bK7zSrH4IFH1sNe0U40tSeeHpc/LOBnF7Q7rym4ppTV8ChZPXtfKJK4uPML5NJ7rYWJv3NjUBT+cc=
