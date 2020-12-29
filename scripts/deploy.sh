@@ -1,12 +1,18 @@
 #!/bin/sh
 # Credit: https://gist.github.com/willprice/e07efd73fb7f13f917ea
 
+# commit_website_files() {
+#   git checkout -b gh-pages
+#   git add . *.html
+#   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+# }
+
 setup_git() {
   git config --global user.email "automatedtradesystem@kryptonunite.com"
   git config --global user.name "Machine At Krypton"
 }
 
-commit_country_json_files() {
+commit_website_files() {
   git fetch
   git checkout production
   # Current month and year, e.g: Apr 2018
@@ -20,21 +26,11 @@ commit_country_json_files() {
 }
 
 upload_files() {
-  # Remove existing "origin"
-  git remote rm origin
   # Add new "origin" with access token in the git URL for authentication
-  git remote add origin https://krypton-unite:${GH_TOKEN}@github.com/krypton-unite/website.git > /dev/null 2>&1
-  git push origin production --quiet
+  git remote add origin-travis https://krypton-unite:${GH_TOKEN}@github.com/krypton-unite/website.git > /dev/null 2>&1
+  git push origin --quiet --set-upstream origin-travis production
 }
 
 setup_git
-
-commit_country_json_files
-
-# Attempt to commit to git only if "git commit" succeeded
-if [ $? -eq 0 ]; then
-  echo "A new commit with changed country JSON files exists. Uploading to GitHub"
-  upload_files
-else
-  echo "No changes in country JSON files. Nothing to do"
-fi
+commit_website_files
+upload_files
