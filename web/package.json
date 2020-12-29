@@ -39,8 +39,9 @@
     "postcss": "^8.2.1",
     "postcss-import": "^12.0.1",
     "precss": "^4.0.0",
+    "sass": "^1.30.0",
     "sharp": "^0.26.3",
     "sitemap": "^2.2.0",
-    "sass": "^1.30.0"
+    "webpack": "^4.44.2"
   }
 }
