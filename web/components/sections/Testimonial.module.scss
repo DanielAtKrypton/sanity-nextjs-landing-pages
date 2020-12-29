@@ -1,12 +1,12 @@
 /* Testimonial.*/
 .root {
-    composes: center from "../../styles/shared.module.css";
+    composes: center from "../../styles/shared.module.scss";
     margin-bottom: 4rem;
     margin-top: 2rem;
   }
   
   .container {
-    composes: narrow-container from "../../styles/shared.module.css";
+    composes: narrow-container from "../../styles/shared.module.scss";
     display: flex;
   }
   

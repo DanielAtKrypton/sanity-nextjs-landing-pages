@@ -3,8 +3,8 @@ import BaseApp from 'next/app'
 import client from '../client'
 // import 'normalize.css'
 import '../styles/custom-properties.scss'
-import '../styles/shared.module.css'
-import '../styles/layout.css'
+import '../styles/shared.module.scss'
+import '../styles/layout.scss'
 
 const siteConfigQuery = `
   *[_id == "global-config"] {

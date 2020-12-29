@@ -1,0 +1,15 @@
+$color_A: #fff;
+$color_B: #147a00;
+$color_C: #22cc00;
+$step_A: 10px;
+$step_B: 2px;
+@keyframes glow {
+    from {
+      text-shadow: 0 0 1*$step_A $color_A, 0 0 2*$step_A $color_A, 0 0 3*$step_A $color_B, 0 0 4*$step_A $color_B, 0 0 5*$step_A $color_B, 0 0 6*$step_A $color_B, 0 0 7*$step_A $color_B;
+      box-shadow: 0 0 1*$step_B $color_A, 0 0 2*$step_B $color_A, 0 0 3*$step_B $color_B, 0 0 4*$step_B $color_B, 0 0 5*$step_B $color_B, 0 0 6*$step_B $color_B, 0 0 7*$step_B $color_B;
+    }
+    to {
+      text-shadow: 0 0 2*$step_A $color_A, 0 0 3*$step_A $color_B, 0 0 4*$step_A $color_B, 0 0 5*$step_A $color_B, 0 0 6*$step_A $color_B, 0 0 7*$step_A $color_B, 0 0 8*$step_A $color_A;
+      box-shadow: 0 0 2*$step_B $color_A, 0 0 3*$step_B $color_C, 0 0 4*$step_B $color_C, 0 0 5*$step_B $color_C, 0 0 6*$step_B $color_C, 0 0 7*$step_B $color_C, 0 0 8*$step_B $color_C;
+    }
+  }

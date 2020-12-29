@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {withRouter} from 'next/router'
-import styles from './Footer.module.css'
+import styles from './Footer.module.scss'
 import SimpleBlockContent from './SimpleBlockContent'
 
 function Footer (props) {
