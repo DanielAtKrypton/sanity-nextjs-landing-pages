@@ -1,5 +1,6 @@
-@import "../styles/custom-media.scss";
-@import '../styles/glow.scss';
+@use "sass:list";
+@import "../styles/shared.module";
+@import '../styles/glow';
 
 .root {
   position: relative;
@@ -45,17 +46,20 @@
   }
 }
 
+$scale_up: 1.8;
+
 .logo {
   display: block;
-  transform: scale(1);
+  transform: scale($scale_up*1);
+
   @include glow_animation;
 
 	&:hover {
-		transform: scale(1.05);
+		transform: scale($scale_up*1.05);
   }
   
 	&:active {
-		transform: scale(0.95);
+		transform: scale($scale_up*0.95);
 	}
 }
 

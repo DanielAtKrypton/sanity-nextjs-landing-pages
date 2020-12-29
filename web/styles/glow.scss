@@ -1,46 +1,22 @@
-$color_A: #fff;
-$color_B: #147a00;
-$color_C: #22cc00;
+@use "sass:list";
+@import "shared.module";
+
+$color_A: rgb(255, 255, 255, 0.1);
+$color_B: rgb(20, 122, 0, 0.99);
+$color_C: rgb(20, 122, 0, 0.4);
 $step_A: 10px;
 $step_B: 2px;
 
-@use "sass:list";
-@function arrange($element, $number) {
-  $list: ();
-  @for $i from 1 through $number {
-    $list: list.append($list, $element);
-  }
-  @return $list;
-}
-
-@function make_progressive_shadow($step, $color_list, $start_index, $number_elements) {
-  $list: ();
-  @for $i from $start_index through $start_index + $number_elements - 1 {
-    $list: list.append(
-      $list,
-      make_text_shadow($step, list.nth($color_list, $i - $start_index + 1), $i),
-      $separator: comma
-    );
-  }
-  @return $list;
-}
-
-@function make_text_shadow($step, $color, $i) {
-  @return 0 0 $i * $step $color;
-}
-
 @keyframes glow {
   from {
-    text-shadow: make_progressive_shadow($step_A, list.join(arrange($color_A, 2), arrange($color_B, 5)), 1, 7);
-    box-shadow: make_progressive_shadow($step_B, list.join(arrange($color_A, 2), arrange($color_B, 5)), 1, 7);
+    -webkit-filter: make_omnipresent_shadow2(2px, 3px, $color_C)
   }
   to {
-    text-shadow: make_progressive_shadow($step_A, list.join(arrange($color_A, 1), arrange($color_B, 6)), 2, 7);
-    box-shadow: make_progressive_shadow($step_B, list.join(arrange($color_A, 1), arrange($color_C, 6)), 2, 7);
+    -webkit-filter: make_omnipresent_shadow2(2px, 3px, $color_B)
   }
 }
 
-$glow_config: glow 2s ease-in-out infinite alternate;
+$glow_config: glow 3s ease-in-out infinite alternate;
 $glow_transition: transform 25ms ease-in-out;
 
 @mixin glow_animation{

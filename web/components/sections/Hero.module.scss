@@ -1,8 +1,7 @@
-@import '../../styles/custom-media.scss';
-/* @import '../../styles/custom-properties.css'; */
+@import '../../styles/shared.module.scss';
 
 .root {
-  composes: center from '../../styles/shared.module.scss';
+  composes: center;
   position: relative;
   background-color: var(--color-black, #000);
   color: var(--color-white, #fff);
@@ -15,17 +14,21 @@
   @media (--media-min-medium) {
     padding-bottom: 4rem;
   }
-}
 
-.root::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background-image: linear-gradient(#2220, #222e);
-  width: 100%;
-  height: 50%;
-  z-index: 0;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-image: linear-gradient(#2220, #222e);
+    width: 100%;
+    height: 50%;
+    z-index: 0;
+  }
+
+  & p a {
+    color: inherit;
+  }
 }
 
 .content {
@@ -36,20 +39,24 @@
   z-index: 1;
   /* -webkit-text-stroke: 0.4px black; */
   /* text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); */
+  & > h1 {
+    margin: 1rem;
+    /* text-align: center; */
+  }
 }
 
 $stroke_opacity: 0.8;
 $shadow_A:rgba(0, 0, 0, $stroke_opacity);
 $shadow_B:rgba(255, 255, 255, $stroke_opacity);
 
-.title {
+.title {  
   position: relative;
   font-weight: 600;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
   -webkit-text-stroke: 1px black;
-  /* text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); */
-  text-shadow: -2px 0 5px $shadow_B, 2px 0 5px $shadow_B, 0 2px 5px $shadow_B, 0 -2px 5px $shadow_B;
+  text-shadow: make_omnipresent_shadow(1px, 2.5px, rgba(255, 255, 255, 0.9));
+  // text-shadow: -2px 0 5px $shadow_B, 2px 0 5px $shadow_B, 0 2px 5px $shadow_B, 0 -2px 5px $shadow_B;
   /* backdrop-filter: blur(10px) brightness(0.6); */
   margin: 0;
   padding: 0;
@@ -71,7 +78,9 @@ $shadow_B:rgba(255, 255, 255, $stroke_opacity);
   font-weight: bold;
   -webkit-text-stroke: 0.5px black;
   /* text-shadow: 0 5px 5px rgba(0, 0, 0, 1); */
-  text-shadow: -2px 0 5px $shadow_A, 2px 0 5px $shadow_A, 0 2px 5px $shadow_A, 0 -2px 5px $shadow_A;
+  // text-shadow: -2px 0 5px $shadow_A, 2px 0 5px $shadow_A, 0 2px 5px $shadow_A, 0 -2px 5px $shadow_A;
+  text-shadow: make_omnipresent_shadow(2px, 5px, $shadow_A);
+  // text-shadow: make_progressive_shadow($step_A, arrange($shadow_A, 4), 2, 7);
   /* text-shadow: -2px 0 5px rgba(255, 255, 255, 0.8), 2px 0 5px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(255, 255, 255, 0.8), 0 -2px 5px rgba(255, 255, 255, 0.8); */
   backdrop-filter: blur(10px) brightness(0.8);
 
@@ -79,28 +88,18 @@ $shadow_B:rgba(255, 255, 255, $stroke_opacity);
     font-size: var(--font-large-size);
     line-height: var(--font-large-line-height);
   }
-}
 
-.content > h1 {
-  margin: 1rem;
-  /* text-align: center; */
-}
-
-.tagline > p {
-  margin: 1rem;
-  text-align: justify;
+  & > p {
+    margin: 1rem;
+    text-align: justify;
+  }  
 }
 
 .ctas {
   margin: 1rem;
   margin-bottom: 1.5rem;
   display: flex;
-}
-
-.ctas > *:not(:first-child) {
-  margin-left: 1rem;
-}
-
-.root p a {
-  color: inherit;
+  & > *:not(:first-child) {
+    margin-left: 1rem;
+  }
 }

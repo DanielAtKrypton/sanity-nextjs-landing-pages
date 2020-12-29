@@ -1,7 +1,8 @@
-@import "../styles/custom-media.scss";
-/* @import '../styles/custom-properties.css'; */
+@import "../styles/custom-media";
+// @import '../styles/custom-properties';
 
 .root {
+  // @extend :root;
   position: relative;
   padding: 2rem 0;
 
@@ -37,7 +38,7 @@
   margin: 0 1.5rem;
   max-width: var(--width-medium);
 
-  @nest & figcaption {
+  & figcaption {
     width: 100%;
     box-sizing: border-box;
   }
@@ -46,7 +47,7 @@
     margin: 0 auto;
     padding-top: 2rem;
 
-    @nest & figcaption {
+    & figcaption {
       position: absolute;
       top: 0;
     }

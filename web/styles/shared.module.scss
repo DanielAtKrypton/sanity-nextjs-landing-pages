@@ -1,4 +1,59 @@
-@import './custom-media.scss';
+@use "sass:list";
+@import 'custom-media';
+
+@function arrange($element, $number) {
+  $list: ();
+  @for $i from 1 through $number {
+    $list: list.append($list, $element);
+  }
+  @return $list;
+}
+
+@function make_progressive_shadow($step, $color_list, $start_index, $number_elements) {
+  $list: ();
+  @for $i from $start_index through $start_index + $number_elements - 1 {
+    $list: list.append(
+      $list,
+      make_text_shadow($step, list.nth($color_list, $i - $start_index + 1), $i),
+      $separator: space
+    );
+  }
+  @return $list;
+}
+
+@function make_text_shadow($step, $color, $i) {
+  @return dropshadow(12px 12px 5px $color);
+}
+
+@function make_omni_shadow($sizeX, $sizeY, $deepth, $color) {
+  @return $sizeX $sizeY $deepth $color;
+}
+
+@function make_omnipresent_shadow($size, $deepth, $color) {
+  $table: (($size*-1 $size*-1), ($size*1 $size*1), ($size*-1 $size*1), ($size*1 $size*-1));
+  $list: ();
+  @for $i from 1 through 4 {
+    $list: list.append(
+      $list,
+      make_omni_shadow(list.nth(list.nth($table, $i), 1), list.nth(list.nth($table, $i), 2), $deepth, $color),
+      $separator: comma
+    );
+  }
+  @return $list;
+}
+
+@function make_omnipresent_shadow2($size, $deepth, $color) {
+  $table: (($size*-1 $size*-1), ($size*1 $size*1), ($size*-1 $size*1), ($size*1 $size*-1));
+  $list: ();
+  @for $i from 1 through 4 {
+    $list: list.append(
+      $list,
+      drop-shadow(list.nth(list.nth($table, $i), 1) list.nth(list.nth($table, $i), 2) $deepth $color),
+      $separator: space
+    );
+  }
+  @return $list;
+}
 
 .center {
   display: flex;
