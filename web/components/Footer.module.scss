@@ -14,7 +14,7 @@
 }
 
 .item {
-  @nest & > a {
+  & > a {
     display: block;
     text-decoration: none;
     color: inherit;
@@ -25,11 +25,11 @@
 .text {
   text-align: center;
 
-  @nest & p {
+  & p {
     margin: 1rem 0;
   }
 
-  @nest & a {
+  & a {
     color: inherit;
   }
 }

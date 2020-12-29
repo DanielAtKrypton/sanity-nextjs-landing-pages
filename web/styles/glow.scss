@@ -3,13 +3,49 @@ $color_B: #147a00;
 $color_C: #22cc00;
 $step_A: 10px;
 $step_B: 2px;
-@keyframes glow {
-    from {
-      text-shadow: 0 0 1*$step_A $color_A, 0 0 2*$step_A $color_A, 0 0 3*$step_A $color_B, 0 0 4*$step_A $color_B, 0 0 5*$step_A $color_B, 0 0 6*$step_A $color_B, 0 0 7*$step_A $color_B;
-      box-shadow: 0 0 1*$step_B $color_A, 0 0 2*$step_B $color_A, 0 0 3*$step_B $color_B, 0 0 4*$step_B $color_B, 0 0 5*$step_B $color_B, 0 0 6*$step_B $color_B, 0 0 7*$step_B $color_B;
-    }
-    to {
-      text-shadow: 0 0 2*$step_A $color_A, 0 0 3*$step_A $color_B, 0 0 4*$step_A $color_B, 0 0 5*$step_A $color_B, 0 0 6*$step_A $color_B, 0 0 7*$step_A $color_B, 0 0 8*$step_A $color_A;
-      box-shadow: 0 0 2*$step_B $color_A, 0 0 3*$step_B $color_C, 0 0 4*$step_B $color_C, 0 0 5*$step_B $color_C, 0 0 6*$step_B $color_C, 0 0 7*$step_B $color_C, 0 0 8*$step_B $color_C;
-    }
+
+@use "sass:list";
+@function arrange($element, $number) {
+  $list: ();
+  @for $i from 1 through $number {
+    $list: list.append($list, $element);
   }
+  @return $list;
+}
+
+@function make_progressive_shadow($step, $color_list, $start_index, $number_elements) {
+  $list: ();
+  @for $i from $start_index through $start_index + $number_elements - 1 {
+    $list: list.append(
+      $list,
+      make_text_shadow($step, list.nth($color_list, $i - $start_index + 1), $i),
+      $separator: comma
+    );
+  }
+  @return $list;
+}
+
+@function make_text_shadow($step, $color, $i) {
+  @return 0 0 $i * $step $color;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: make_progressive_shadow($step_A, list.join(arrange($color_A, 2), arrange($color_B, 5)), 1, 7);
+    box-shadow: make_progressive_shadow($step_B, list.join(arrange($color_A, 2), arrange($color_B, 5)), 1, 7);
+  }
+  to {
+    text-shadow: make_progressive_shadow($step_A, list.join(arrange($color_A, 1), arrange($color_B, 6)), 2, 7);
+    box-shadow: make_progressive_shadow($step_B, list.join(arrange($color_A, 1), arrange($color_C, 6)), 2, 7);
+  }
+}
+
+$glow_config: glow 2s ease-in-out infinite alternate;
+$glow_transition: transform 25ms ease-in-out;
+
+@mixin glow_animation{
+  -webkit-animation: $glow_config;
+  -moz-animation: $glow_config;
+  animation: $glow_config;
+  transition: $glow_transition;
+}

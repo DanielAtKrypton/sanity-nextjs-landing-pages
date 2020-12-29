@@ -1,7 +1,5 @@
 @import '../styles/glow.scss';
 
-$glow_config: glow 1s ease-in-out infinite alternate;
-
 .button {
   color: inherit;
   display: block;
@@ -12,15 +10,12 @@ $glow_config: glow 1s ease-in-out infinite alternate;
   text-decoration: inherit;
   font-weight: 600;
   max-width: fit-content;
-  transition: transform 50ms ease-in-out;
   transform: scale(1);
 
   /* margin: auto; */
   width: fit-content;
   white-space: nowrap;
-  -webkit-animation: $glow_config;
-  -moz-animation: $glow_config;
-  animation: $glow_config;
+  @include glow_animation;
 }
 
 .button:hover {
