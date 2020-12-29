@@ -1,26 +1,27 @@
 {
   "private": true,
   "name": "krypton-unite-website-web",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "author": "Daniel Kaminski de Souza <daniel@kryptonunite.com>",
   "scripts": {
     "dev": "next",
     "build": "next build && next export && node exportSitemap.js",
     "format": "prettier-eslint --write \"**/*.js\" \"!.next/**\" \"!node_modules/**\" \"!out/**\"",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "test": "echo \"No test was specified yet!\n\""
   },
   "dependencies": {
+    "@babel/runtime-corejs2": "^7.12.5",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^1.150.7",
     "@sanity/image-url": "^0.140.19",
-    "@zeit/next-css": "^1.0.1",
     "groq": "^0.140.0",
     "lodash": "^4.17.20",
-    "next": "^8.1.0",
-    "next-seo": "^1.11.2",
+    "next": "^10.0.4",
+    "next-seo": "^4.17.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-inlinesvg": "^0.8.4",
     "react-mailchimp-form": "^1.0.1",
     "react-mailchimp-subscribe": "^2.1.0"
@@ -28,16 +29,20 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "cssnano": "^4.1.10",
-    "eslint": "^5.15.1",
+    "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-config-standard-react": "^7.0.2",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.21.2",
-    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-standard": "^4.1.0",
+    "postcss": "^8.2.1",
     "postcss-import": "^12.0.1",
-    "postcss-preset-env": "^6.6.0",
-    "sitemap": "^2.1.0"
+    "precss": "^4.0.0",
+    "sass": "^1.30.0",
+    "sharp": "^0.26.3",
+    "sitemap": "^2.2.0",
+    "webpack": "^4.44.2"
   }
 }

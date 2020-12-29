@@ -2,7 +2,7 @@
 import React from 'react'
 import imageUrlBuilder from '@sanity/image-url'
 import client from '../../client'
-import styles from './Testimonial.module.css'
+import styles from './Testimonial.module.scss'
 
 const builder = imageUrlBuilder(client)
 
