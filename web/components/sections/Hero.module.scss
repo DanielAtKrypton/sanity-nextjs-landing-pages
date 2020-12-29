@@ -69,19 +69,18 @@ $shadow_B:rgba(255, 255, 255, $stroke_opacity);
   }
 }
 
+.tagline > div,
 .tagline {
   position: relative;
   /* margin: 0; */
-  padding: 0;
+  // padding: 0;
+  padding-top: 0.0012%;
+  padding-bottom: 0.0012%;
   margin-top: 0.5em;
   margin-bottom: 5rem;
   font-weight: bold;
   -webkit-text-stroke: 0.5px black;
-  /* text-shadow: 0 5px 5px rgba(0, 0, 0, 1); */
-  // text-shadow: -2px 0 5px $shadow_A, 2px 0 5px $shadow_A, 0 2px 5px $shadow_A, 0 -2px 5px $shadow_A;
   text-shadow: make_omnipresent_shadow(2px, 5px, $shadow_A);
-  // text-shadow: make_progressive_shadow($step_A, arrange($shadow_A, 4), 2, 7);
-  /* text-shadow: -2px 0 5px rgba(255, 255, 255, 0.8), 2px 0 5px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(255, 255, 255, 0.8), 0 -2px 5px rgba(255, 255, 255, 0.8); */
   backdrop-filter: blur(10px) brightness(0.8);
 
   @media (--media-min-medium) {
@@ -91,6 +90,8 @@ $shadow_B:rgba(255, 255, 255, $stroke_opacity);
 
   & > p {
     margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     text-align: justify;
   }  
 }
