@@ -11,8 +11,8 @@ after_script:
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 # # - node ./node_modules/grunt-cli/bin/grunt release
 # # - bash ./scripts/deploy.sh
-# - git fetch
-# - git push -f -q https://${GITHUB_TOKEN}@github.com/krypton-unite/website.git origin production
+- git fetch
+- git push -f -q https://${GITHUB_TOKEN}@github.com/krypton-unite/website.git origin production
 
 env:
   global:
