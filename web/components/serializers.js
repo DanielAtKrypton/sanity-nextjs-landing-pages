@@ -6,11 +6,13 @@ const serializers = {
     embedHTML: EmbedHTML,
     figure: Figure
   },
-  code: props => (
-    <pre data-language={props.node.language}>
-      <code>{props.node.code}</code>
-    </pre>
-  )
+  marks: {
+    internalLink: ({mark, children}) => {
+      const {slug = {}} = mark
+      const href = `/${slug.current}`
+      return <a href={href}>{children}</a>
+    }
+  }
 }
 
 export default serializers
