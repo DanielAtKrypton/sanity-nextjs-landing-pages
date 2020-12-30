@@ -1,6 +1,14 @@
 @use "sass:list";
 @import 'custom-media';
 
+$shadow_opacity: 0.8;
+$shadow_A:rgba(0, 0, 0, $shadow_opacity);
+$shadow_B:rgba(255, 255, 255, $shadow_opacity);
+$shadow_C:rgba(255, 255, 255, 0.9);
+$shadow_E: rgb(255, 255, 255, 0.1);
+$shadow_F: rgb(20, 122, 0, 0.99);
+$shadow_G: rgb(20, 122, 0, 0.4);
+
 @function arrange($element, $number) {
   $list: ();
   @for $i from 1 through $number {
@@ -53,6 +61,20 @@
     );
   }
   @return $list;
+}
+
+@mixin pressable_button_effect($scale_up_factor, $glow: false){
+  transform: scale($scale_up_factor*1);
+  &:hover {
+    transform: scale($scale_up_factor*1.05);
+    @if $glow {
+      -webkit-text-stroke: 0.8px green;
+      // box-shadow: make_omnipresent_shadow(2px, 5px, $shadow_F); // $shadow_G
+    }
+  }  
+  &:active {
+    transform: scale($scale_up_factor*0.95);
+  }  
 }
 
 .center {

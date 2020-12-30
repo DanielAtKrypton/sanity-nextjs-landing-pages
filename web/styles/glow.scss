@@ -1,18 +1,12 @@
 @use "sass:list";
 @import "shared.module";
 
-$color_A: rgb(255, 255, 255, 0.1);
-$color_B: rgb(20, 122, 0, 0.99);
-$color_C: rgb(20, 122, 0, 0.4);
-$step_A: 10px;
-$step_B: 2px;
-
 @keyframes glow {
   from {
-    -webkit-filter: make_omnipresent_shadow2(2px, 3px, $color_C)
+    -webkit-filter: make_omnipresent_shadow2(2px, 3px, $shadow_G)
   }
   to {
-    -webkit-filter: make_omnipresent_shadow2(2px, 3px, $color_B)
+    -webkit-filter: make_omnipresent_shadow2(2px, 3px, $shadow_F)
   }
 }
 

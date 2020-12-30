@@ -45,17 +45,13 @@
   }
 }
 
-$stroke_opacity: 0.8;
-$shadow_A:rgba(0, 0, 0, $stroke_opacity);
-$shadow_B:rgba(255, 255, 255, $stroke_opacity);
-
 .title {  
   position: relative;
   font-weight: 600;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
   -webkit-text-stroke: 1px black;
-  text-shadow: make_omnipresent_shadow(1px, 2.5px, rgba(255, 255, 255, 0.9));
+  text-shadow: make_omnipresent_shadow(1px, 2.5px, $shadow_C);
   // text-shadow: -2px 0 5px $shadow_B, 2px 0 5px $shadow_B, 0 2px 5px $shadow_B, 0 -2px 5px $shadow_B;
   /* backdrop-filter: blur(10px) brightness(0.6); */
   margin: 0;
