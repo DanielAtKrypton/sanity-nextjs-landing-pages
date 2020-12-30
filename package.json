@@ -3,7 +3,7 @@
   "name": "krypton-unite-website",
   "version": "1.0.9",
   "scripts": {
-    "build" : "run-p builds:**",
+    "build": "run-p builds:**",
     "builds:main": "lerna run build --parallel",
     "builds:web": "lerna bootstrap && (cd web && npm run build)",
     "builds:studio": "lerna bootstrap && (cd studio && npm run build)",
