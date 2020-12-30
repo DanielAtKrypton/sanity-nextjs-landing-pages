@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
-import styles from './Header.module.scss'
+import styles from './Header.module.css'
 import HamburgerIcon from './icons/Hamburger'
 
 class Header extends Component {

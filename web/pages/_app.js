@@ -2,7 +2,7 @@ import React from 'react'
 import BaseApp from 'next/app'
 import client from '../client'
 // import 'normalize.css'
-import '../styles/custom-properties.scss'
+import './app.css'
 import '../styles/shared.module.scss'
 import '../styles/layout.scss'
 
