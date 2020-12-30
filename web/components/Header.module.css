@@ -34,23 +34,24 @@
     top: 100%;
     width: 100%;
     color: var(--color-white, #fff);
-
-    @nest .root[data-show-nav="true"] & {
-      display: block;
-    }
   }
 }
 
 .navItems {
     composes: navItemsBase;
-    background-color: rgba(0, 0, 0, 0.5);
+    @nest .root[data-show-nav="true"] & {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
 
 /* if backdrop support: very transparent and blurred */
 @supports ((-webkit-backdrop-filter: blur(10px) brightness(0.8)) or (backdrop-filter: blur(10px) brightness(0.8))) {
     .navItems {
         composes: navItemsBase;
-        -webkit-backdrop-filter: blur(10px) brightness(0.8);
-        backdrop-filter: blur(10px) brightness(0.8);
+        @nest .root[data-show-nav="true"] & {
+            -webkit-backdrop-filter: blur(10px) brightness(0.8);
+            backdrop-filter: blur(10px) brightness(0.8);
+        }
     }
 }
