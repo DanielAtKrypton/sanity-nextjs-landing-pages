@@ -90,20 +90,14 @@ $shadow_G: rgb(20, 122, 0, 0.4);
     margin: 0;
     width: 100%;
   }
-}
-
-.normal-container {
-  composes: container;
-
-  @media (--typography-breakpoint) {
-    max-width: var(--wide-container, 60rem);
+  .normal-container {
+    @media (--typography-breakpoint) {
+      max-width: var(--wide-container, 60rem);
+    }
   }
-}
-
-.narrow-container {
-  composes: container;
-
-  @media (--typography-breakpoint) {
-    max-width: var(--narrow-container, 30rem);
+  .narrow-container { 
+    @media (--typography-breakpoint) {
+      max-width: var(--narrow-container, 30rem);
+    }
   }
 }

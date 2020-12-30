@@ -1,4 +1,3 @@
-@use "sass:list";
 @import "../styles/shared.module";
 @import '../styles/glow';
 
@@ -8,7 +7,7 @@
   display: flex;
   margin: 0 auto;
   max-width: var(--width-small);
-  & a {
+  a {
     color: inherit;
     text-decoration: inherit;
   }
