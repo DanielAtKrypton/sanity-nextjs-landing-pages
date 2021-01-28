@@ -9,7 +9,6 @@
     "format": "prettier-eslint --write \"**/*.js\" \"!.next/**\" \"!node_modules/**\" \"!out/**\"",
     "lint": "eslint .",
     "start": "next start",
-    "test": "echo \"No test was specified yet!\n\"",
     "sass": "sass",
     "upgrade": "npm upgrade",
     "update": "npm update"

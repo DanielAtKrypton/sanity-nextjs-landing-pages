@@ -7,7 +7,6 @@
 	"scripts": {
 		"build": "sanity build",
 		"dev": "sanity start",
-		"test": "sanity check",
 		"upgrade": "sanity upgrade",
 		"update": "npm update"
 	},
