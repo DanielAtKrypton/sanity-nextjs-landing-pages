@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6b7156d6-62f4-4959-a2e5-014522e1e4ee/deploy-status)](https://app.netlify.com/sites/kryptonunite/deploys)
+
 # Next.js landing pages
 
 _SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action._
