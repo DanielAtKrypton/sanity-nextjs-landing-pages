@@ -1,32 +1,27 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6b7156d6-62f4-4959-a2e5-014522e1e4ee/deploy-status)](https://app.netlify.com/sites/kryptonunite/deploys)
-
-# Next.js landing pages
+# sanity-template-nextjs-landing-pages
 
 _SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action._
 
-Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
+This template repo is used by Sanity.io to easily create deployed and configured projects through a web interface. You can test it by [creating this project](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
 
-## What you have
+The template contains both a Sanity Studio and a front-end in Next.js. Both are deployed on Netlify.
 
-- A dynamic frontend with [Next.js](https://nextjs.org)
-- Structured content using [Sanity.io](https://www.sanity.io)
-- Global deployment on [Netlify](https://netlify.com)
+Want to make a template for Sanity and your favourite front-end framework? We’re still maturing [sanity.io/create](https://sanity.io/create) and our APIs, but do tell us about it on [slack.sanity.io](https://slack.sanity.io).
 
-## Quick start
+![The Sanity.io and Next.js powered landing page website](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/blob/master/assets/frontend.jpg?raw=true)
 
-1. Clone this repository
-2. `npm install` in the project root folder on local
-3. `npm run dev` to start the studio and frontend locally
-   - Your studio should be running on [http://localhost:3333](http://localhost:3333)
-   - Your frontend should be running on [http://localhost:3000](http://localhost:3000)
-4. `npm run build` to build to production locally
+## Local development
 
-## Deploy changes
+You develop the templates in `/template`, and review your changes in `/build`.
 
-Netlify automatically deploys new changes commited to master on GitHub. If you want to change deployment branch, do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
+1. **Install dependencies with `npm install` in the root folder.** This will install the template development tool that watches changes in the `/template` folder and output the template to `/build`.
 
-## Stuck? Get help
+2. **Run `npm run dev` in root folder.** This will build the template files to `/build`. This is how the code will look for those who install the project later.
 
-[![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
+3. **Run `npm install` in `./build/web` and `sanity install` in `/build/studio`** This will install the necessary dependencies for the Next.js frontend and the Studio.
 
-Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
+4. **Run `npm run dev` in `./build/web` and `sanity start` in `/build/studio`**. This will start the development servers for the Next.js frontend and Sanity Studio.
+
+## Notes
+
+When developing ProjectId and dataset name can be changed in `template-values-development.json`

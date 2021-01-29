@@ -1,22 +1,23 @@
 {
   "private": true,
-  "name": "krypton-unite-website",
-  "version": "1.0.10",
+  "name": "sanity-template-nextjs-landing-pages",
   "scripts": {
-    "build": "lerna run build --parallel",
-    "build-web": "lerna bootstrap && (cd web && npm run build)",
-    "build-studio": "lerna bootstrap && (cd studio && npm run build)",
-    "dev": "lerna run dev --parallel",
-    "format": "lerna run format",
-    "graphql-deploy": "lerna run graphql-deploy",
-    "lint": "lerna run lint",
-    "postinstall": "lerna bootstrap",
-    "test": "lerna run test",
-    "update": "npm update & lerna run update --stream",
-    "upgrade": "npm upgrade &lerna run upgrade --stream"
+    "build": "sanity-template build --template-values template-values-production.json",
+    "dev": "sanity-template watch --template-values template-values-development.json",
+    "copy-node-modules": "npm run copy-studio-node-modules && npm run copy-web-node-modules",
+    "copy-studio-node-modules": "cp -R build/studio/node_modules template/studio/node_modules",
+    "copy-web-node-modules": "cp -R build/web/node_modules template/web/node_modules",
+    "export": "cd build/studio && sanity dataset export landing-pages ../../data/production.tar.gz",
+    "lint-build": "npm run build && (cd build && npm install && npm run lint)",
+    "test": "npm run build && cd build && npm install && npm run build"
   },
   "devDependencies": {
-    "@sanity/cli": "^2.2.5",
-    "lerna": "^3.22.1"
+    "husky": "^3.0.1",
+    "sanity-template": "^1.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "([ -z \"$SKIP_HOOK\" ] && sanity-template lockfiles && git add '*package-lock.json*' && git diff --quiet && SKIP_HOOK=1 git commit -m 'Generate lockfiles') && echo 'Committed lockfiles' || echo ''"
+    }
   }
 }
