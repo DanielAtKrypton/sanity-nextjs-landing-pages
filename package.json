@@ -16,7 +16,7 @@
     "upgrade": "npm upgrade &lerna run upgrade --stream"
   },
   "devDependencies": {
-    "@sanity/cli": "^2.2.3",
+    "@sanity/cli": "^2.2.5",
     "lerna": "^3.22.1"
   }
 }
