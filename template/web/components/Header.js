@@ -83,7 +83,6 @@ class Header extends Component {
               }
             }}
             as='/'
-            prefetch
           >
             <a title={title}>{this.renderLogo(logo)}</a>
           </Link>
@@ -103,7 +102,6 @@ class Header extends Component {
                         query: {slug: slug.current}
                       }}
                       as={`/${slug.current}`}
-                      prefetch
                     >
                       <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
                     </Link>
