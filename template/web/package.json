@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "krypton-unite-website-web",
+  "name": "next-js-landing-pages-web",
   "version": "1.0.10",
   "author": "Daniel Kaminski de Souza <daniel@kryptonunite.com>",
   "scripts": {
