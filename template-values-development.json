@@ -1,34 +1,34 @@
 {
   "repository": {
-    "name": "dev-sanity-nextjs-landing-pages",
-    "owner": "mariuslundgard",
+    "name": "https://github.com/krypton-unite/website",
+    "owner": "Daniel Kaminski de Souza",
     "private": false
   },
   "sanity": {
-    "dataset": "landing-pages",
-    "projectId": "jmhf2rn8",
-    "projectTitle": "Next.js landing pages (dev)"
+    "dataset": "production",
+    "projectId": "86q3jq7j",
+    "projectTitle": "Krypton Unite Website"
   },
   "user": {
-    "displayName": "Marius Lundgård",
-    "profileImage": "https://lh3.googleusercontent.com/-a67P3TV8b5g/AAAAAAAAAAI/AAAAAAAAADI/LGBX1ZAjh88/photo.jpg",
-    "email": "marius@sanity.io"
+    "displayName": "Daniel Kaminski de Souza",
+    "profileImage": "",
+    "email": "daniel@kryptonunite.com"
   },
   "userInput": {},
   "deployments": {
     "studio": {
-      "url": "https://sanity-gatsby-blog-studio-rf4qpk9y.netlify.com/",
+      "url": "https://sanity-nextjs-landing-pages-studio-vxxrrn3u.netlify.app",
       "providerName": "netlify",
       "providerInfo": {
-        "buildHookId": "5cc04d5199df1802277a6e91",
-        "siteId": "b3b7bb87-000f-42a3-9ed3-83358be97dde"
+        "buildHookId": "5f47e57faaca5575c559084f",
+        "siteId": "04bf8eee-878a-4685-8d2a-2159275cc3e9"
       }
     },
     "web": {
-      "url": "https://sanity-gatsby-blog-web-skupqnos.netlify.com/",
+      "url": "https://kryptonunite.netlify.app/",
       "providerName": "netlify",
       "providerInfo": {
-        "buildHookId": "5caf2962008b0b042f8df19a",
+        "buildHookId": "5f47e57f3b410a70bec59168",
         "siteId": "7e740745-2e2e-4427-be81-aded75334337"
       }
     }
