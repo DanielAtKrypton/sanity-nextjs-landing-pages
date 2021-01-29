@@ -3,7 +3,7 @@ export default {
     {
       name: 'sanity-tutorials',
       options: {
-        templateRepoId: 'sanity-io/sanity-template-nextjs-landing-pages'
+        repoId: 'sanity-io/sanity-template-nextjs-landing-pages'
       }
     },
     {name: 'structure-menu'},
@@ -18,16 +18,16 @@ export default {
                 'NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.',
               sites: [
                 {
-                  buildHookId: '<#<deployments.studio.providerInfo.buildHookId>#>',
+                  buildHookId: '5f47e57faaca5575c559084f',
                   title: 'Sanity Studio',
-                  name: '<#<deployments.studio.providerInfo.siteName>#>',
-                  apiId: '<#<deployments.studio.providerInfo.siteId>#>'
+                  name: 'sanity-nextjs-landing-pages-studio-vxxrrn3u',
+                  apiId: '04bf8eee-878a-4685-8d2a-2159275cc3e9'
                 },
                 {
-                  buildHookId: '<#<deployments.web.providerInfo.buildHookId>#>',
+                  buildHookId: '5f47e57f3b410a70bec59168',
                   title: 'Landing pages Website',
-                  name: '<#<deployments.web.providerInfo.siteName>#>',
-                  apiId: '<#<deployments.web.providerInfo.siteId>#>'
+                  name: 'kryptonunite',
+                  apiId: '6b7156d6-62f4-4959-a2e5-014522e1e4ee'
                 }
               ]
             }
@@ -36,10 +36,10 @@ export default {
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/<#<repository.owner>#>/<#<repository.name>#>',
+            value: 'https://github.com/krypton-unite/website',
             category: 'Code'
           },
-          {title: 'Frontend', value: '<#<deployments.web.url>#>', category: 'apps'}
+          {title: 'Frontend', value: 'https://kryptonunite.netlify.app', category: 'apps'}
         ]
       }
     },

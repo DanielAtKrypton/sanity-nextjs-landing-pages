@@ -19,7 +19,24 @@ export default {
           { title: 'Emphasis', value: 'em' },
           { title: 'Code', value: 'code' },
         ],
-        annotations: [{ type: 'link' }, { type: 'internalLink' }],
+        annotations: [
+          {
+            name: 'internalLink',
+            type: 'object',
+            title: 'Internal link',
+            fields: [
+              {
+                name: 'reference',
+                type: 'reference',
+                title: 'Reference',
+                to: [
+                  { type: 'post' },
+                  // other types you may want to link to
+                ]
+              }
+            ]
+          }
+        ]
       },
     },
     { type: 'figure' },
