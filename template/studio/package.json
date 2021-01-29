@@ -7,8 +7,7 @@
 	"scripts": {
 		"build": "sanity build",
 		"dev": "sanity start",
-		"upgrade": "sanity upgrade",
-		"update": "npm update"
+		"test": "sanity check"
 	},
 	"dependencies": {
 		"@sanity/base": "^2.2.4",

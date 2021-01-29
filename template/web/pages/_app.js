@@ -1,9 +1,10 @@
 import React from 'react'
-import BaseApp, {Container} from 'next/app'
+import BaseApp from 'next/app'
 import client from '../client'
 // import 'normalize.css'
-import '../styles/shared.module.css'
-import '../styles/layout.css'
+import './app.css'
+import '../styles/shared.module.scss'
+import '../styles/layout.scss'
 
 const siteConfigQuery = `
   *[_id == "global-config"] {
@@ -21,7 +22,7 @@ const siteConfigQuery = `
   `
 
 class App extends BaseApp {
-  static async getInitialProps ({Component, ctx}) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -31,22 +32,20 @@ class App extends BaseApp {
     // Add site config from sanity
     return client.fetch(siteConfigQuery).then(config => {
       if (!config) {
-        return {pageProps}
+        return { pageProps }
       }
       if (config && pageProps) {
         pageProps.config = config
       }
 
-      return {pageProps}
+      return { pageProps }
     })
   }
 
-  render () {
-    const {Component, pageProps} = this.props
+  render() {
+    const { Component, pageProps } = this.props
     return (
-      <Container>
         <Component {...pageProps} />
-      </Container>
     )
   }
 }

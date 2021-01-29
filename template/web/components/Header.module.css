@@ -1,5 +1,4 @@
-@import "../styles/custom-media.css";
-@import "../styles/custom-properties.css";
+@import "../styles/custom-media";
 
 .root {
   position: relative;
@@ -7,56 +6,13 @@
   display: flex;
   margin: 0 auto;
   max-width: var(--width-small);
-}
-
-.root a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-.branding {
-  font-size: inherit;
-  font-weight: inherit;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0;
-
-  @nest & > a {
-    display: block;
-    padding: 1.5em;
-
-    @supports (padding-top: env(safe-area-inset-top)) {
-      padding-left: calc(env(safe-area-inset-left) + 1.5rem);
-    }
-  }
-
-  @nest & img, & svg {
-    height: calc(var(--font-base-line-height) * 1.5rem);
-    width: auto;
+  @nest & a {
     color: inherit;
-    vertical-align: top;
-  }
-
-  @nest & svg path {
-    fill: currentColor;
-  }
-
-  @media (--media-max-medium) {
-    flex: 1;
+    text-decoration: inherit;
   }
 }
 
-.logo {
-  display: block;
-}
-
-.nav {
-  @media (--media-min-medium) {
-    flex: 1;
-  }
-}
-
-.navItems {
+.navItemsBase {
   padding: 0;
   margin: 0;
 
@@ -77,73 +33,25 @@
     left: 0;
     top: 100%;
     width: 100%;
-    background-color: var(--color-black, #000);
     color: var(--color-white, #fff);
+  }
+}
 
+.navItems {
+    composes: navItemsBase;
     @nest .root[data-show-nav="true"] & {
-      display: block;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
     }
-  }
 }
 
-.navItem {
-  display: flex;
-  white-space: nowrap;
-  align-items: stretch;
-  line-height: calc(var(--font-base-line-height) * 1.5rem);
-
-  @nest & > a {
-    display: block;
-    position: relative;
-    padding: 1.5rem 0.5rem;
-
-    @media (--media-max-medium) {
-      padding: 1rem 1.5rem;
-      width: 100%;
-      box-sizing: border-box;
-      text-align: right;
-
-      @nest &[data-is-active="true"]::before {
-        content: "";
-        width: 100%;
-        height: 1px;
-        position: absolute;
-        bottom: 0.5rem;
-        left: 0;
-        background-color: var(--color-white, #fff);
-      }
+/* if backdrop support: very transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(10px) brightness(0.8)) or (backdrop-filter: blur(10px) brightness(0.8))) {
+    .navItems {
+        composes: navItemsBase;
+        @nest .root[data-show-nav="true"] & {
+            -webkit-backdrop-filter: blur(10px) brightness(0.8);
+            backdrop-filter: blur(10px) brightness(0.8);
+        }
     }
-  }
-
-  @nest .root[data-show-nav="true"] & > a[data-is-active="true"]::before {
-    display: none;
-  }
-
-  @media (--media-min-medium) {
-    margin-left: 0.5rem;
-  }
-}
-
-.showNavButton {
-  appearance: none;
-  border: none;
-  font: inherit;
-  background: none;
-  color: inherit;
-  margin: 0;
-  padding: 1.5rem;
-  outline: none;
-
-  @media (--media-min-medium) {
-    display: none;
-  }
-}
-
-.hamburgerIcon {
-  font-size: calc(var(--font-base-line-height) * 1.5rem);
-  display: block;
-
-  @media (--media-min-medium) {
-    display: none;
-  }
 }

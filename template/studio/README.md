@@ -1,1 +1,1 @@
-# krypton-unite-website-studio
+# <#< repository.name >#>-studio

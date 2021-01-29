@@ -1,11 +1,11 @@
 {
   "root": true,
   "project": {
-    "name": "Next.js landing pages"
+    "name": "<#< sanity.projectTitle >#>"
   },
   "api": {
-    "projectId": "86q3jq7j",
-    "dataset": "production"
+    "projectId": "<#< sanity.projectId >#>",
+    "dataset": "<#< sanity.dataset >#>"
   },
   "plugins": [
     "@sanity/base",
@@ -19,8 +19,7 @@
     "dashboard-widget-netlify",
     "@sanity/studio-hints"
   ],
-  "parts": [
-    {
+  "parts": [{
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
     },
