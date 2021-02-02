@@ -10,7 +10,7 @@ script:
 - npm test
 after_success:
 - git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- echo "https://${GH_TOKEN}:MachineAtKrypton@github.com" > .git/credentials
 after_script:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
