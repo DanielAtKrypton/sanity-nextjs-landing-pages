@@ -1,7 +1,5 @@
 language: node_js
 node_js:
-  - '8'
-  - '10'
   - '12'
 
 cache:
@@ -13,3 +11,16 @@ install:
 
 script:
   - npm test
+
+-after_success:
+  - . ./scripts/create_all_branches.sh
+  - create_all_branches
+  - git checkout master
+  # Remove all but build folder
+  - find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
+  # Move build contents to root folder.
+  - mv -v ./build/* .
+  # Delete build folder
+  - rm build -r
+  # Deploy to master branch
+  - git push origin master
