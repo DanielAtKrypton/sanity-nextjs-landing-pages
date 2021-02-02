@@ -1,26 +1,26 @@
 language: node_js
 node_js:
-  - '12'
-
+- '12'
 cache:
   directories:
-    - '$HOME/.npm'
-
+  - "$HOME/.npm"
 install:
-  - npm ci
-
+- npm ci
 script:
-  - npm test
-
--after_success:
-  - . ./scripts/create_all_branches.sh
-  - create_all_branches
-  - git checkout master
-  # Remove all but build folder
-  - find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
-  # Move build contents to root folder.
-  - mv -v ./build/* .
-  # Delete build folder
-  - rm build -r
-  # Deploy to master branch
-  - git push origin master
+- npm test
+after_script:
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- npm install grunt-cli --save-dev
+- node ./node_modules/grunt-cli/bin/grunt release
+after_success:
+- source ./scripts/create_all_branches.sh
+- create_all_branches
+- git checkout master
+- find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
+- mv -v ./build/* .
+- rm build -r
+- git push origin master
+env:
+  global:
+    secure: UtRK9V//208A3ihHqTaiuQ/1hlRsOlRzVuhb1VkPInW7HailbMNhl7w6i/FfkOTQUFbIHu8hHcOfAmrbtf2sKBfJRPLt9dD0nYV/GnsMojNp6ZT3btZe9JMy7izlC8LB+fH6z9VZtXdRs2GB1uzK1xckG6Ga+RFGAle9gp9Vl5nMt0slRM5ji30jE3M6xs24uu5hF0+EU5F7bVniQ5/rSv2aKGmN/0/MAW0y3rRdNm8VwZgiQGtH+JEdsHQhFLGD+VBH68k0q1a6YLs4ioDXUj89BM9XKoS+K6Y8hM/yyCeZQCd++2sVvsgQDwTJG5wg2KpQmbT9DtY/c4ZtOmMJ1/VGCSbdH4SjST+yOWpbTBfn9tYKmSieavkcTt6LOnYh4sAFLCyNpWbneOxLyfqQhyZhAAN/ynnT19CYUZdoMrhZDCQIb02Pe73bVhEbrz0Ed7l+AbwdQ9vUNdYkqqJG6AhrNFcMWTwI4vnj9xGbBlhxs56SK6WoIU3nlZbe4fKNe9ChD7KHJMOuYK1llWWqu1IhqqWxUA2ovByQZXFL7oA3+2BGMU0OzY7+6NUuWFuU0oOcLLsJT0fCZ/rxGkC+2q/OaCh8ZAqEtaRPfDWOf6VEwr0Tc1Lvrua8Hw+O8/V/EUkZ8IwZf35ePZe5sLMZaFW+pRkvEc/A8c0hQT3Eynw=
