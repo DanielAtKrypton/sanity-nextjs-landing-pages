@@ -18,7 +18,9 @@ after_script:
 - find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
 - mv -v ./build/* .
 - rm build -r
+- git add .
+- git commit -m "Travis push from development branch"
 - git push origin master
 env:
   global:
-    secure: qAJXAIfy3CiTvaJ2fwD9Q+UBvy5Gub52lFlFPEfFxPu0ioRzbXpqw/ipjAn/7jY7RyzA/nbJpdVFTgg9QKdIcBzEiRvsttjG7whnPvPBUSTuiHMDDOqTCY1PIzrOrsLCu90T3S9ji9fxWDy0BviLLaeOoK3zZiikhEo+DVembw+6nZpNFMi9B5O3zFNJLRUjDn6Dy2GgebffcyBg0xnfxltaO1CqANiC0NV6ifQ20u0pkH2QaD9HL+ic99gmKfik6y8Vq3mLXnsTsV6oB4IkxNBl4xYdcfL7HYzUlY5MSlNW4uE+saY078Mw6r1nCoDBcM52nyTAw5ifsTSjctSP/HWQhRSvHuOJgB+qGpBO+dTlGuSYvLl1gnBH0aBPtWSWGFqd8T/KrRRWu21A+WxxnwrhW7kleXC97LI9S4EHTjB+Xe+IVJ1MNANfeMVo2hh2gJoZJksuSWxO37NeZ8cRwlkS5CQiWnqmcr7lBm+CyhIICkD0GAQFzvWRTG8RxwS5aDzJLveulMShfc90KbD+ueGPKUUCGQvhJE3QnFY51fyz6A2+rXRJE9o2FDYgklyF9wWCVO8T5z1haoo0IuyXT+lbTu7Oe900sgvcEhTny31JGTb1w5OH+JGBJEJD9UI38si/i0A0yP96A3pvddvrEsNd5kpmIt/PTKvXSjW6Gwc=
+    secure: MS0kmmxDUGgTN1DU6SgLCgmCVrUDM78likLvl3al5i5DZqM7jCCRyswB038Cc7WslhMHy3ghS0y+ChqL3xYwCViiBU8/qMoHYM0G1gJsyvuKY/O3m5U3OyWmjO05PDEWG55aCkyeKTmRfW3shszAR0ZodpPmxxbf+HUc970Ps2NdX+Da5KnyYc7MuQ0zEp1rzIpweeKB3Di+u6junKl2fEqgWA3kfNCCnWQ4a2U+QOdwEzqQwGrPhb/rsIvCLXL/H15yLo673wQqsARBIdAiwWRIzPZza99Ff0dWISMFrz2jNTY6/tWTzu03kbehr3dLdAxcxqeIoye+taDNYoEhUq7WbY/ZjFuM0QB6NCxioXRPed6MhIhaWtBAkD7hQwgDlyukbtjlE5VGPksOjOnfBVrhN/nQE6/5Hs2SHLa2L3IEFpNndQEYUZr/wT8amI+Fpn5fHae5SezyuV4CgRuoujxQXk7GzbKq0jYI6KaOntuPht5KZGxXTj0JgNFkpqVXx9uowJPAL9e8fuju/x8j90MUmwx1iTyoqvz3W4UAOMBP6s+pLTnMumvX2wOS1N1PCl49RsmjNdeotavElpNwJ1XHbFWtRnp/BUDP1fHC5y0xQ0FSVNpVr270V2Y7sXrocBYnppOIFYzqfvSsQzev1vp7b4hwvyPLvXfgSW7Q0Ng=
