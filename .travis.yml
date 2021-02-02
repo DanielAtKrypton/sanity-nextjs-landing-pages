@@ -10,7 +10,7 @@ script:
 - npm test
 after_success:
 - git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:MachineAtKrypton@github.com" > .git/credentials
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 after_script:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
@@ -23,4 +23,4 @@ after_script:
 - git push origin master
 env:
   global:
-    secure: DKaybYb9Uezp9bvd2NEqi72ih2raGp39gkdnmQbz704nFp35y0qEH/dGW0CNfDzdECweZhEW4hS9FMF+DzeKrgJq8zTodyQ9oEvdJ9TjBU0oZUL6npA3RKjDtQS0CVFAVcduoDJSl0frJnYpUth8XMd1VQEhr++/245w+rQFs2SY+6mVk50aN4pifbz3DMLiYEQo4oO3e1POEqFxBFGfZsSNo0etLNzXiXxgq9NKOHGwm1VdGIQW1tDh7Y8GjOtN/J5EFBfm/RSlM5QY8N14fZmTuThA2+3aDU0JQbXtxYa1PVXjBydhftsHdx5bTgqotJ6qEjlVl8Fo80o5xGtqBawip0QkaKIPZTjRjnbg0COqobPnqIFBP95J/VHJvAIcB8zQ4AKvk0hjAzOPbYKPAxGDPmfKboBOVpp5y0ups9Z6NwPNH7ZfuJoJNtabuJ0rBO/Qn8nJT5elLBtl8qXS2YF2hP44REUiZblDA3Vvd9Oe5SWmuw1+7/4+iNYdbciLela3clDC+/s79ZQsoRrV4uWX6QH8lE/5GnIik1VSvz7+0awCCdH/hPH8jtNERLgK/PVpiOZRJ8EkZRKGKWez7WboOfxTk0WW7FChK/MNWMDNbkipiE1jOx4RyVWwt/L774u9EySz9aMIZUN2ydOnZUf9TaVdRzgfAguwDQsVplM=
+    secure: MS0kmmxDUGgTN1DU6SgLCgmCVrUDM78likLvl3al5i5DZqM7jCCRyswB038Cc7WslhMHy3ghS0y+ChqL3xYwCViiBU8/qMoHYM0G1gJsyvuKY/O3m5U3OyWmjO05PDEWG55aCkyeKTmRfW3shszAR0ZodpPmxxbf+HUc970Ps2NdX+Da5KnyYc7MuQ0zEp1rzIpweeKB3Di+u6junKl2fEqgWA3kfNCCnWQ4a2U+QOdwEzqQwGrPhb/rsIvCLXL/H15yLo673wQqsARBIdAiwWRIzPZza99Ff0dWISMFrz2jNTY6/tWTzu03kbehr3dLdAxcxqeIoye+taDNYoEhUq7WbY/ZjFuM0QB6NCxioXRPed6MhIhaWtBAkD7hQwgDlyukbtjlE5VGPksOjOnfBVrhN/nQE6/5Hs2SHLa2L3IEFpNndQEYUZr/wT8amI+Fpn5fHae5SezyuV4CgRuoujxQXk7GzbKq0jYI6KaOntuPht5KZGxXTj0JgNFkpqVXx9uowJPAL9e8fuju/x8j90MUmwx1iTyoqvz3W4UAOMBP6s+pLTnMumvX2wOS1N1PCl49RsmjNdeotavElpNwJ1XHbFWtRnp/BUDP1fHC5y0xQ0FSVNpVr270V2Y7sXrocBYnppOIFYzqfvSsQzev1vp7b4hwvyPLvXfgSW7Q0Ng=
