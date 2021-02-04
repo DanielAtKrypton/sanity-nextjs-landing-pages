@@ -3,7 +3,7 @@
 
 .root {
   position: relative;
-  color: var(--color-black, #000);
+  color: var(--primary_color, #000);
   display: flex;
   margin: 0 auto;
   max-width: var(--width-small);
@@ -34,7 +34,7 @@
     left: 0;
     top: 100%;
     width: 100%;
-    color: var(--color-white, #fff);
+    color: var(--secondary_color, #fff);
   }
 }
 
@@ -128,8 +128,8 @@ $scale_up: 1.8;
     left: 0;
     top: 100%;
     width: 100%;
-    background-color: var(--color-black, #000);
-    color: var(--color-white, #fff);
+    background-color: var(--primary_color, #000);
+    color: var(--secondary_color, #fff);
   
     .root[data-show-nav="true"] & {
       display: block;
@@ -163,7 +163,7 @@ $scale_up: 1.8;
         position: absolute;
         bottom: 0.5rem;
         left: 0;
-        background-color: var(--color-white, #fff);
+        background-color: var(--secondary_color, #fff);
       }
     }
   }

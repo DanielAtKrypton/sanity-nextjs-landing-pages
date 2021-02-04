@@ -3,8 +3,8 @@
 .root {
   composes: center;
   position: relative;
-  background-color: var(--color-black, #000);
-  color: var(--color-white, #fff);
+  background-color: var(--primary_color, #000);
+  color: var(--secondary_color, #fff);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -76,7 +76,10 @@
   margin-bottom: 5rem;
   font-weight: bold;
   -webkit-text-stroke: 0.5px black;
-  text-shadow: make_omnipresent_shadow(2px, 5px, $shadow_A);
+  text-shadow: make_omnipresent_shadow(2px, 5px, $white_shadow);
+  @media(prefers-color-scheme: dark) {
+
+  }
   backdrop-filter: blur(10px) brightness(0.8);
 
   @media (--media-min-medium) {

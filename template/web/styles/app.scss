@@ -1,17 +1,34 @@
+
+a:-webkit-any-link {
+  color: hsl(271, 68%, 32%);//-webkit-link;
+  @media(prefers-color-scheme: dark) {
+    color: hsl(271, 68%, 68%);//-webkit-link;
+  }
+}
+
 :root {
     --wide-container: 60rem;
     --narrow-container: 40rem;
   
     --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
-  
-    --color-black: #202123;
+
+    --primary_color: #202123;
     --color-dark-gray: #32373e;
     --color-gray: #697a90;
     --color-light-gray: #b4bcc7;
     --color-very-light-gray: #e7ebed;
-    --color-white: #fff;
+    --secondary_color: #fff;
     --color-accent: #156dff;
-  
+    --color-very-strong-gray: hsl(200, 14%, 8%);
+    --color-accent_for_dark: hsl(217, 100%, 46%);
+
+    --primary_color: #202123;
+    --secondary_color: #fff;
+    @media(prefers-color-scheme: dark) {
+      --primary_color: #fff;
+      --secondary_color: #202123;
+    }
+
     /* Typography */
     --unit: 16;
     --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
