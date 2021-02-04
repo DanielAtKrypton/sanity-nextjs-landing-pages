@@ -1,0 +1,106 @@
+@import '../../styles/shared.module';
+
+.root {
+  background-color: var(--primary_color, #000);
+  color: var(--secondary_color, #fff);
+  composes: center;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 12.5rem;
+  padding-bottom: 2rem;
+
+  @media (--media-min-medium) {
+    padding-bottom: 4rem;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-image: linear-gradient(#2220, #222e);
+    width: 100%;
+    height: 50%;
+    z-index: 0;
+  }
+
+  & p a {
+    color: inherit;
+  }
+}
+
+.content {
+  width: 100%;
+  max-width: var(--width-small);
+  padding: 0 1.5em;
+  box-sizing: border-box;
+  z-index: 1;
+  /* -webkit-text-stroke: 0.4px black; */
+  /* text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5); */
+  & > h1 {
+    margin: 1rem;
+    /* text-align: center; */
+  }
+}
+
+.title {  
+  // @include most_tittle;
+  -webkit-text-stroke: 1px var(--primary_color);
+  position: relative;
+  font-weight: 600;
+  font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height);
+  // -webkit-text-stroke: 1px --secondary_color;
+  // -webkit-text-stroke: 1px --primary_color;
+  // -webkit-text-stroke: 1px --secondary_color;
+  text-shadow: make_omnipresent_shadow(1px, 2.5px, var(--secondary_translucent_shadow));
+  // text-shadow: -2px 0 5px $shadow_B, 2px 0 5px $shadow_B, 0 2px 5px $shadow_B, 0 -2px 5px $shadow_B;
+  /* backdrop-filter: blur(10px) brightness(0.6); */
+  margin: 0;
+  padding: 0;
+  /* padding-top: 12.5rem; */
+
+  @media (--media-min-medium) {
+    font-size: var(--font-title1-size);
+    line-height: var(--font-title1-line-height);
+    padding-top: 0.3rem;
+  }
+}
+
+.tagline > div,
+.tagline {
+  position: relative;
+  /* margin: 0; */
+  // padding: 0;
+  padding-top: 0.0012%;
+  padding-bottom: 0.0012%;
+  margin-top: 0.5em;
+  margin-bottom: 5rem;
+  font-weight: bolder;
+  -webkit-text-stroke: 0.1px var(--primary_color);
+  backdrop-filter: blur(10px) brightness(var(--primary_brightness));
+  text-shadow: make_omnipresent_shadow(0.3px, 2px, var(--secondary_shadow));
+
+  @media (--media-min-medium) {
+    font-size: var(--font-large-size);
+    line-height: var(--font-large-line-height);
+  }
+
+  & > p {
+    margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }  
+}
+
+.ctas {
+  margin: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  & > *:not(:first-child) {
+    margin-left: 1rem;
+  }
+}
