@@ -3,7 +3,7 @@
 
 | web | studio |
 |:---:|:------:|
-|[![Netlify Status](https://api.netlify.com/api/v1/badges/6b7156d6-62f4-4959-a2e5-014522e1e4ee/deploy-status)](https://app.netlify.com/sites/kryptonunite/deploys)|[![Netlify Status](https://api.netlify.com/api/v1/badges/04bf8eee-878a-4685-8d2a-2159275cc3e9/deploy-status)](https://app.netlify.com/sites/sanity-nextjs-landing-pages-studio-vxxrrn3u/deploys)
+|[![Netlify Status](https://api.netlify.com/api/v1/badges/6b7156d6-62f4-4959-a2e5-014522e1e4ee/deploy-status)](https://app.netlify.com/sites/kryptonunite/deploys)|[![Netlify Status](https://api.netlify.com/api/v1/badges/04bf8eee-878a-4685-8d2a-2159275cc3e9/deploy-status)](https://app.netlify.com/sites/kryptonunite-studio/deploys)
 
 _SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action._
 

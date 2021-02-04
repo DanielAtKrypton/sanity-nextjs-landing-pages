@@ -17,7 +17,7 @@
   "userInput": {},
   "deployments": {
     "studio": {
-      "url": "https://sanity-nextjs-landing-pages-studio-vxxrrn3u.netlify.app",
+      "url": "https://kryptonunite-studio.netlify.app",
       "providerName": "netlify",
       "providerInfo": {
         "buildHookId": "5f47e57faaca5575c559084f",
