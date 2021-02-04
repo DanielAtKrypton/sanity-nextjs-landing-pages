@@ -63,8 +63,8 @@
 }
 
 .captionBox {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-black);
+  background-color: var(--secondary_color);
+  border: 1px solid var(--primary_color);
   padding: 1.5rem;
 
   @media (--media-min-medium) {
