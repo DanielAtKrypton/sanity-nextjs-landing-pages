@@ -2,10 +2,10 @@
 
 @keyframes glow {
   from {
-    -webkit-filter: make_omnipresent_shadow2(2px, 3px, $shadow_G)
+    -webkit-filter: make_omnipresent_shadow2(2px, 3px, var(--primary_from_green))
   }
   to {
-    -webkit-filter: make_omnipresent_shadow2(2px, 3px, $shadow_F)
+    -webkit-filter: make_omnipresent_shadow2(2px, 3px, var(--primary_to_green))
   }
 }
 

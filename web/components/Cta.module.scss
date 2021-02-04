@@ -1,16 +1,17 @@
 @import '../styles/glow';
+@import '../styles/shared.module';
 
 .button {
-  color: inherit;
+  color: var(--secondary_color) !important;
+  -webkit-text-stroke: 1px var(--primary_color);
   display: block;
   border-radius: 0;
-  border: 1px solid currentColor;
+  border: 1.2px solid var(--secondary_color);
   background-color: transparent;
   padding: 1em 1.5em;
   text-decoration: inherit;
   font-weight: 600;
   max-width: fit-content;
-  -webkit-text-stroke: 0.5px black;
   @include pressable_button_effect(1);
 
   /* margin: auto; */
