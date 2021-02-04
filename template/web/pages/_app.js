@@ -1,8 +1,7 @@
 import React from 'react'
 import BaseApp from 'next/app'
 import client from '../client'
-// import 'normalize.css'
-import './app.css'
+import '../styles/app.scss'
 import '../styles/shared.module.scss'
 import '../styles/layout.scss'
 

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
-import legacy_styles from './Header.module.css'
 import styles from './Header.module.scss'
 import HamburgerIcon from './icons/Hamburger'
 
@@ -73,7 +72,7 @@ class Header extends Component {
     const {showNav} = this.state
 
     return (
-      <div className={legacy_styles.root} data-show-nav={showNav}>
+      <div className={styles.root} data-show-nav={showNav}>
         <h1 className={styles.branding}>
           <Link
             href={{
@@ -88,7 +87,7 @@ class Header extends Component {
           </Link>
         </h1>
         <nav className={styles.nav}>
-          <ul className={legacy_styles.navItems}>
+          <ul className={styles.navItems}>
             {navItems &&
               navItems.map(item => {
                 const {slug, title, _id} = item
