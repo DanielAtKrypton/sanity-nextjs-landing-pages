@@ -13,6 +13,50 @@
   }
 }
 
+.navItemsBase {
+  padding: 0;
+  margin: 0;
+
+  @media (--media-min-medium) {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1rem;
+  }
+
+  @supports (padding-top: env(safe-area-inset-top)) {
+    padding-right: calc(env(safe-area-inset-right) + 1rem);
+  }
+
+  @media (--media-max-medium) {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    color: var(--color-white, #fff);
+  }
+}
+
+.navItems {
+    composes: navItemsBase;
+    .root[data-show-nav="true"] & {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* if backdrop support: very transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(10px) brightness(0.8)) or (backdrop-filter: blur(10px) brightness(0.8))) {
+    .navItems {
+        composes: navItemsBase;
+        .root[data-show-nav="true"] & {
+            -webkit-backdrop-filter: blur(10px) brightness(0.8);
+            backdrop-filter: blur(10px) brightness(0.8);
+        }
+    }
+}
+
 $scale_up: 1.8;
 
 .branding {
