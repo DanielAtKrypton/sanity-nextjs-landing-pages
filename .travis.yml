@@ -16,11 +16,12 @@ after_script:
 - create_all_branches
 - git checkout master
 - find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
-- mv -v ./build/* .
+- sudo rm **/node_modules build/studio/dist build/web/out -r
+- mv -vt . ./build/
 - rm build -r
 - git add .
 - git commit -m "Travis push from development branch"
 - git push origin master
 env:
   global:
-    secure: MS0kmmxDUGgTN1DU6SgLCgmCVrUDM78likLvl3al5i5DZqM7jCCRyswB038Cc7WslhMHy3ghS0y+ChqL3xYwCViiBU8/qMoHYM0G1gJsyvuKY/O3m5U3OyWmjO05PDEWG55aCkyeKTmRfW3shszAR0ZodpPmxxbf+HUc970Ps2NdX+Da5KnyYc7MuQ0zEp1rzIpweeKB3Di+u6junKl2fEqgWA3kfNCCnWQ4a2U+QOdwEzqQwGrPhb/rsIvCLXL/H15yLo673wQqsARBIdAiwWRIzPZza99Ff0dWISMFrz2jNTY6/tWTzu03kbehr3dLdAxcxqeIoye+taDNYoEhUq7WbY/ZjFuM0QB6NCxioXRPed6MhIhaWtBAkD7hQwgDlyukbtjlE5VGPksOjOnfBVrhN/nQE6/5Hs2SHLa2L3IEFpNndQEYUZr/wT8amI+Fpn5fHae5SezyuV4CgRuoujxQXk7GzbKq0jYI6KaOntuPht5KZGxXTj0JgNFkpqVXx9uowJPAL9e8fuju/x8j90MUmwx1iTyoqvz3W4UAOMBP6s+pLTnMumvX2wOS1N1PCl49RsmjNdeotavElpNwJ1XHbFWtRnp/BUDP1fHC5y0xQ0FSVNpVr270V2Y7sXrocBYnppOIFYzqfvSsQzev1vp7b4hwvyPLvXfgSW7Q0Ng=
+    secure: OFnr0CObdVhTlsr72pcpzJo8W23PNH2cPSzM2VdRIT8nWmpe1Ayias6ucgQBwHVii3/EYokevhPuMcBSYaIXG7CAObsXucazwn+7uDESBGhiK/xhexM7fOBxzdRfpQWFMjrF6JKJSuuhzA4no2NEaJekIv3vDcMJV9vSiXUqU01FBC8OnKzTr7c6ifDmk/ZTts+rW+1UX8GqT6JrkRCeyR9sY2jEyqnN3Gl/fi7NXhvNOZN3IXfqN39RXVxJ+yCkNcbMmvJDIiuY06iMf9zgKP96h0c7trex2dTobQTdhKlukl6a+vB6SzsfpntZjtG6df4qScF4qxaVOlaVrIIfhe5msjvAfEI0zkKzu1vHY5pQqtgpjaZuZelz93sIrnPpG48dFKyEJnrVXDQMoXoJIJHRkZcMbkTHAQi0F9Lhi0X7F0Z/GC23R76zZxm81zAbNRKzj3eYTT7qTp5N6BbYqzJI+eSmHVTLAtaEuUNp76XiisUj9yJsQ29huYFK3V4bNQs7gXNHF0uVcWE+X5lUvmzg+eIngW1OCLk37Zo1isShaQF+UEJ9wpIiCblP8ucTz7ZPgbclB7AEaYPpzUBBUgekQUCpNPxHN8HDyTHZOrpmJIV06st+mD5niN0GyxNL7zmYJUmMRo3xzbd3xE3Aqbse65Tylbjj0yu6kN0T9QI=
