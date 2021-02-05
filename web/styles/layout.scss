@@ -1,0 +1,23 @@
+html {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-line-height);
+}
+
+body {
+  background: var(--secondary_color);
+  color: var(--primary_color);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+html,
+body,
+:global(#__next),
+:global(.container) {
+  height: 100%;
+}
+
+:global(.content) {
+  min-height: calc(100% - 84px - 218px); 
+}
