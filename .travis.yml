@@ -1,9 +1,6 @@
 language: node_js
 node_js:
 - '12'
-cache:
-  directories:
-  - "$HOME/.npm"
 install:
 - npm ci
 script:
@@ -15,13 +12,13 @@ after_script:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
 - git checkout master
-- find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
+- sudo find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
 - sudo rm **/node_modules build/studio/dist build/web/out -r
-- mv -vt . ./build/
+- sudo mv -v ./build/(*|.*) .
 - sudo rm build -r
 - git add .
 - git commit -m "Travis push from development branch"
 - git push origin master
 env:
   global:
-    secure: OFnr0CObdVhTlsr72pcpzJo8W23PNH2cPSzM2VdRIT8nWmpe1Ayias6ucgQBwHVii3/EYokevhPuMcBSYaIXG7CAObsXucazwn+7uDESBGhiK/xhexM7fOBxzdRfpQWFMjrF6JKJSuuhzA4no2NEaJekIv3vDcMJV9vSiXUqU01FBC8OnKzTr7c6ifDmk/ZTts+rW+1UX8GqT6JrkRCeyR9sY2jEyqnN3Gl/fi7NXhvNOZN3IXfqN39RXVxJ+yCkNcbMmvJDIiuY06iMf9zgKP96h0c7trex2dTobQTdhKlukl6a+vB6SzsfpntZjtG6df4qScF4qxaVOlaVrIIfhe5msjvAfEI0zkKzu1vHY5pQqtgpjaZuZelz93sIrnPpG48dFKyEJnrVXDQMoXoJIJHRkZcMbkTHAQi0F9Lhi0X7F0Z/GC23R76zZxm81zAbNRKzj3eYTT7qTp5N6BbYqzJI+eSmHVTLAtaEuUNp76XiisUj9yJsQ29huYFK3V4bNQs7gXNHF0uVcWE+X5lUvmzg+eIngW1OCLk37Zo1isShaQF+UEJ9wpIiCblP8ucTz7ZPgbclB7AEaYPpzUBBUgekQUCpNPxHN8HDyTHZOrpmJIV06st+mD5niN0GyxNL7zmYJUmMRo3xzbd3xE3Aqbse65Tylbjj0yu6kN0T9QI=
+    secure: T+c+8xmdhfIFsive2zZJochoSdAHQEVaFRu4qfutYqJsTBd6AScLIvXC/UKcTe8OOH/2teYdu8QhVr0jmqrqmNBiAGBlBY41Yfcluzn2vkX5H+dZ8ptBkfGcw5bCe777QP9SrC2vysaZBkjC7+z1gTJFIxsD4dvIQqhIp7/u3mvZVdw5THbsGALnUE65xZVkwC8yEofujJj6H/mXCtKTizVG78Xlo79nj1y3Ff0g4cXVMBC4Obl63pqupsr1T9Y3aRubCcuv0yPyT9K+NNJL3BEeSaDD2yTVIYnIJiSY7vtNksoJXLGd5X4MFX6BPoqiDmfjlIvRYxw72tRmNjerirvrBEMvJuqZphSshnEM1MofrVSM1gtIX5OyzIAu7AMRZOYYoLNX0vTQ6Nts8QXuWWGwUaxL6SEnhKHu8/AZnWA6BffEsYygNWNAAbDJaxDM/w9tVc7R1Onb1Qc+rTlxX03Mis/++wNJk6BiWQ6cjYTlvN4LcLZBw7SJfNFvfumI0j+kDKYzoASrZvZTPLsE5KxGwweCVzJSOO+e5WsDC0f4TD8ZRg+khn1EIYGptRKal3/0zQwTtLPHKU5B4MovVWS/mvgkuP4l+2vdgv6rzvcfra7FOBVz9rhSqg8Tnk4yQXiAX3gRgE7opjRi3QEVJYpUAlfmZZeBgyf4RS2CRbg=
