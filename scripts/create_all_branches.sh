@@ -1,3 +1,8 @@
+function setup_git_user() {
+  git config --global user.email ${USER_EMAIL}
+  git config --global user.name ${USER_NAME}
+}
+
 function create_all_branches()
 {
     # Keep track of where Travis put us.

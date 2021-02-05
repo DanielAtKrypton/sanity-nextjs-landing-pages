@@ -15,11 +15,12 @@ after_script:
 - sudo find . ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -o -regex
   '^./build/studio/dist\(/.*\)?' -o -regex '^./build/web/out\(/.*\)?' -o -name node_modules
   -type d | xargs sudo rm -rf
-- sudo mv -v build/* build/.* .
-- sudo rm build -r
+- sudo mv -v ./build/* ./build/.* .
+- sudo rm ./build -r
+- setup_git_user
 - git add .
-- git commit -m "Travis push from development branch"
+- git commit -m "Push from development branch at Travis"
 - git push origin master
 env:
   global:
-    secure: jVCYR2sz9olZCDPS9BwjrI772/Jhonxia46sTr+OaRlABDkP9+kK3joKWfjs/pzASBniAfcs/76kmbt/uJke8zk2FARF4jfoQLVb/HU0/3Iz6XckgdkSR67dBnATxIT4AVkABrbEVdwfJC4wmC5zd+nb/HWxZxBYd0TZDn+ETZsh7DCQBF1k33PJaCFX29WP0pooA1K7tV7eg4k4kjtPR5yvfn0rTax7seFhkZFZbkTuf8QaO4C3mrEgCxzQ1MzSPfiqb9YD4E1T+V6H57gTXFyBPZf3vUma9x4z2d8ZoWmB01bN/7ceKXK/SjiNUjjFTUk8QASzq6DqXNx3ChxwplVs4u2JuuR9OMtm8HcUM6mmbEQrmFOfcqs24QYu0Xa72NTDip/nPSpR+H3ggK1ni58+qIFE+a95VFn5pKNbmWQ+KOTcBGn4URUgf3pkb9IkoJPZs8+X4y7dZqBERJFw83UyyIMnhoG2aQsgD4P7s9RLBnqkaTC/yPxG0hbTzQU60JNU+4oeAtHOMVE0KyDqnuRweZVZeRus9THUJ3Xmh3zM8rgOtePkCxa4QogeDp6axQjPxs6FdbUvYKzDbUSBNVD64XDJnqmbBWaeCE4NI8lttxmA1lPGsKJ8iohk1L8ti3taNJPo7Q7XgfGYiYlRIUyJ57/aTPQydn5SjFZvhQE=
+    secure: TawgMttI4OnkajanFYxCa1Nzl2pIUAmyrKU5n0REq6THD12wPwfgiFdP9TxA+Yltt+Bqy8OJsIEIcqgk1Sjzt+QlT4Tx3urQyu4GT6u8++iIO6i5qJ32g6yJW5Qx5IJOhF1adadkGSFyVYr2GU3M76LQWIsHLB0gFIv0nGCw3KiUT3tkfKKXl9oi3CKORk42NSs6Xa0pUyByEolyCH0p9hOn0+JaY02QYZnKKEL7wPTM6CidDb94iB7CK2xZgqOKOlPr+ghG+j4GyETE7hY22tXpCo5gd0lMUVrPbMIzOkD2I3AzVSuh1En+T1gmpwxHot8ioy0K7Y9xN1lLH/v+Q9Gm6C4iLnPkyOQVmQaRH76NwX3cGHqExXTXJnLOE2Mqghca/7rUnNHJkmLC6JQGpTfvbSr/e4Fuvbu7srv6c38ZvKhKFh5Ys2h0I6IcAFADtkzk2Qx93U30YcM0UamdDXCjobZAqpA5grDurqsG28g5hZXGfG8snB0JamkIUwSm7TcC40Cm94hYQV+0ee7drUFWgVjkMpIjJQErmiMRXAatUNhRtbAmZ+ICCM0AcrDavSlzl5scPQWKRYZPsLhG/YSDJsYC+hbv8M6yl3KQpNx5l807i/wqceMMdW6FQdNAhVjWVeifwKX76bTgm9DL2pr+7iSF22P+gjbc2K1xWqM=
