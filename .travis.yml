@@ -14,7 +14,8 @@ after_script:
 - git checkout master
 - sudo find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
 - sudo rm **/node_modules build/studio/dist build/web/out -r
-- sudo mv -v ./build/(*|.*) .
+- sudo mv -v ./build/* .
+- sudo mv -v ./build/.* .
 - sudo rm build -r
 - git add .
 - git commit -m "Travis push from development branch"
