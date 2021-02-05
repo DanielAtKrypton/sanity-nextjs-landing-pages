@@ -12,14 +12,14 @@ after_script:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
 - git checkout master
-- sudo find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
-- sudo rm **/node_modules build/studio/dist build/web/out -r
-- sudo mv -v ./build/* .
-- sudo mv -v ./build/.* .
+- sudo find . ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -o -regex
+  '^./build/studio/dist\(/.*\)?' -o -regex '^./build/web/out\(/.*\)?' -o -name node_modules
+  -type d | xargs sudo rm -rf
+- sudo mv -v build/* build/.* .
 - sudo rm build -r
 - git add .
 - git commit -m "Travis push from development branch"
 - git push origin master
 env:
   global:
-    secure: UV2no8cx9DDmUZmJr/vikZN/6zqJOF5toIR1zf26tTz542ghgwPQxiaIEdCUf/Y9whXt9KBr0z21snNwo/X2bRkaDiVpCOwv1Ys+Ezltq2Sno2rIyo0WOERzVTkoJTkm6Du0mfNe/qor+xAzyZIvdMWw/WImC0gT6a28NA4p4//Vj+54DVbsMooOSYqIIPcdt2oraDPZrSzI7sPpTOrsvLK2S/ixTTIyoWXuHUm+YqoTDHvovxHkML+DwGmrfGLW/4e1Bvy95E7ghEa8guDwzCNKeqptL4VZz5GambrLz0703YGk93CCcpvkMrv4QxiYBahiP3LvVHCI/VHDc5KvzIXJgQD4SJ3qdKdZoyegWLnKL5yA2A7JBx4QDyjTXXY2awjGn2QKN2kOhjkbk93NsoWp+YKYO30SHhU9DnPVlRtJI4lcxVFjjDpDBTbwW1XvJO6nFyu5cQrf7rPkUYl5ECBTA3OMnAZKHT7jsHmWuBeVcC69d3HNnrc2z0ReEkVi1szHrwmyZF5kGGvuF/h2u48uyUqBJ+wQ/yHktM0sN9guIkpVryyLWmZmvILAHRORfQ8YZjjuDFO0mkPAw2vEsEhsYpqYeSVOhRfDo0Jc5wGUpXpp2Tf28AOd2ve3H7tcOEJzIcmCSvR5EGU/lbkDa1D5viHKauRHn8GJ37GpvIw=
+    secure: jVCYR2sz9olZCDPS9BwjrI772/Jhonxia46sTr+OaRlABDkP9+kK3joKWfjs/pzASBniAfcs/76kmbt/uJke8zk2FARF4jfoQLVb/HU0/3Iz6XckgdkSR67dBnATxIT4AVkABrbEVdwfJC4wmC5zd+nb/HWxZxBYd0TZDn+ETZsh7DCQBF1k33PJaCFX29WP0pooA1K7tV7eg4k4kjtPR5yvfn0rTax7seFhkZFZbkTuf8QaO4C3mrEgCxzQ1MzSPfiqb9YD4E1T+V6H57gTXFyBPZf3vUma9x4z2d8ZoWmB01bN/7ceKXK/SjiNUjjFTUk8QASzq6DqXNx3ChxwplVs4u2JuuR9OMtm8HcUM6mmbEQrmFOfcqs24QYu0Xa72NTDip/nPSpR+H3ggK1ni58+qIFE+a95VFn5pKNbmWQ+KOTcBGn4URUgf3pkb9IkoJPZs8+X4y7dZqBERJFw83UyyIMnhoG2aQsgD4P7s9RLBnqkaTC/yPxG0hbTzQU60JNU+4oeAtHOMVE0KyDqnuRweZVZeRus9THUJ3Xmh3zM8rgOtePkCxa4QogeDp6axQjPxs6FdbUvYKzDbUSBNVD64XDJnqmbBWaeCE4NI8lttxmA1lPGsKJ8iohk1L8ti3taNJPo7Q7XgfGYiYlRIUyJ57/aTPQydn5SjFZvhQE=
