@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+- '12'
+cache:
+  directories:
+  - "$HOME/.npm"
+install:
+- npm ci
+script:
+- npm test
+after_success:
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+after_script:
+- source ./scripts/create_all_branches.sh
+- create_all_branches
+- git checkout master
+- sudo find . ! -regex '^./build\(/.*\)?' ! -regex '^./.git\(/.*\)?' -delete
+- sudo rm **/node_modules build/studio/dist build/web/out -r
+- sudo mv -v ./build/(*|.*) .
+- sudo rm build -r
+- git add .
+- git commit -m "Travis push from development branch"
+- git push origin master
+env:
+  global:
+    secure: OFnr0CObdVhTlsr72pcpzJo8W23PNH2cPSzM2VdRIT8nWmpe1Ayias6ucgQBwHVii3/EYokevhPuMcBSYaIXG7CAObsXucazwn+7uDESBGhiK/xhexM7fOBxzdRfpQWFMjrF6JKJSuuhzA4no2NEaJekIv3vDcMJV9vSiXUqU01FBC8OnKzTr7c6ifDmk/ZTts+rW+1UX8GqT6JrkRCeyR9sY2jEyqnN3Gl/fi7NXhvNOZN3IXfqN39RXVxJ+yCkNcbMmvJDIiuY06iMf9zgKP96h0c7trex2dTobQTdhKlukl6a+vB6SzsfpntZjtG6df4qScF4qxaVOlaVrIIfhe5msjvAfEI0zkKzu1vHY5pQqtgpjaZuZelz93sIrnPpG48dFKyEJnrVXDQMoXoJIJHRkZcMbkTHAQi0F9Lhi0X7F0Z/GC23R76zZxm81zAbNRKzj3eYTT7qTp5N6BbYqzJI+eSmHVTLAtaEuUNp76XiisUj9yJsQ29huYFK3V4bNQs7gXNHF0uVcWE+X5lUvmzg+eIngW1OCLk37Zo1isShaQF+UEJ9wpIiCblP8ucTz7ZPgbclB7AEaYPpzUBBUgekQUCpNPxHN8HDyTHZOrpmJIV06st+mD5niN0GyxNL7zmYJUmMRo3xzbd3xE3Aqbse65Tylbjj0yu6kN0T9QI=
