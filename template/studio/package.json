@@ -1,9 +1,9 @@
 {
     "private": true,
-    "name": "krypton-unite-website-studio",
+    "name": "sanity-nextjs-landing-pages-studio",
     "version": "1.0.7",
     "main": "package.json",
-    "author": "Daniel Kaminski de Souza <daniel@kryptonunite.com>",
+    "author": "Sanity <hello@sanity.io>",
     "scripts": {
         "build": "sanity build",
         "dev": "sanity start",

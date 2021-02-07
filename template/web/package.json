@@ -1,17 +1,14 @@
 {
   "private": true,
-  "name": "krypton-unite-website-web",
-  "version": "1.0.10",
-  "author": "Daniel Kaminski de Souza <daniel@kryptonunite.com>",
+  "name": "sanity-nextjs-landing-pages-web",
+  "version": "1.0.11",
+  "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "dev": "next",
     "build": "next build && next export && node exportSitemap.js",
     "format": "prettier-eslint --write \"**/*.js\" \"!.next/**\" \"!node_modules/**\" \"!out/**\"",
     "lint": "eslint .",
-    "start": "next start",
-    "sass": "sass",
-    "upgrade": "npm upgrade",
-    "update": "npm update"
+    "start": "next start"
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.12.13",
