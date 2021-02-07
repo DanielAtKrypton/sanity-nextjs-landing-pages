@@ -1,6 +1,7 @@
 import React from 'react'
 import BaseApp from 'next/app'
 import client from '../client'
+// import 'normalize.css'
 import '../styles/app.scss'
 import '../styles/shared.module.scss'
 import '../styles/layout.scss'
@@ -44,7 +45,7 @@ class App extends BaseApp {
   render () {
     const {Component, pageProps} = this.props
     return (
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     )
   }
 }

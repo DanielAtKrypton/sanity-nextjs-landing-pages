@@ -63,7 +63,7 @@ $scale_up: 1.8;
     }
   }
 
-  img, & svg {
+  img, svg {
     height: calc(var(--font-base-line-height) * 1.5rem);
     width: auto;
     color: inherit;
@@ -112,8 +112,8 @@ $scale_up: 1.8;
     left: 0;
     top: 100%;
     width: 100%;
-    background-color: var(--primary_color, #000);
-    color: var(--secondary_color, #fff);
+    background-color: var(--color-black, #000);
+    color: var(--color-white, #fff);
   
     .root[data-show-nav="true"] & {
       display: block;
@@ -147,7 +147,7 @@ $scale_up: 1.8;
         position: absolute;
         bottom: 0.5rem;
         left: 0;
-        background-color: var(--secondary_color, #fff);
+        background-color: var(--color-white, #fff);
       }
     }
   }
@@ -175,6 +175,7 @@ $scale_up: 1.8;
     display: none;
   }
 }
+
 .hamburgerIcon {
   font-size: calc(var(--font-base-line-height) * 1.5rem);
   display: block;
