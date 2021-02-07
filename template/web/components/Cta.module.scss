@@ -2,18 +2,13 @@
 
 .button {
   color: var(--secondary_color) !important;
-  -webkit-text-stroke: 1px var(--primary_color);
   display: block;
   border-radius: 0;
-  border: 1.2px solid var(--secondary_color);
+  border: 1px solid currentColor;
   background-color: transparent;
   padding: 1em 1.5em;
   text-decoration: inherit;
   font-weight: 600;
   max-width: fit-content;
   @include pressable_button_effect(1);
-
-  /* margin: auto; */
-  width: fit-content;
-  white-space: nowrap;
 }

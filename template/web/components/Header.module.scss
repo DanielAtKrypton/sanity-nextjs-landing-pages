@@ -2,7 +2,7 @@
 
 .root {
   position: relative;
-  color: var(--primary_color, #000);
+  color: var(--color-black, #000);
   display: flex;
   margin: 0 auto;
   max-width: var(--width-small);
@@ -45,17 +45,6 @@
     }
 }
 
-/* if backdrop support: very transparent and blurred */
-@supports ((-webkit-backdrop-filter: blur(10px) brightness(0.8)) or (backdrop-filter: blur(10px) brightness(0.8))) {
-    .navItems {
-        composes: navItemsBase;
-        .root[data-show-nav="true"] & {
-            -webkit-backdrop-filter: blur(10px) brightness(0.8);
-            backdrop-filter: blur(10px) brightness(0.8);
-        }
-    }
-}
-
 $scale_up: 1.8;
 
 .branding {
@@ -68,7 +57,6 @@ $scale_up: 1.8;
 	> a {
     display: block;
     padding: 1.5em;
-    width: 0;
     
 	  @supports (padding-top: env(safe-area-inset-top)) {
       padding-left: calc(env(safe-area-inset-left) + 1.5rem);
@@ -80,7 +68,6 @@ $scale_up: 1.8;
     width: auto;
     color: inherit;
     vertical-align: top;
-    z-index: 2px;
   
     @include pressable_button_effect($scale_up*1);
   }
