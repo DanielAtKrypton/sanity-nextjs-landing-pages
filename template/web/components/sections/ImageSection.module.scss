@@ -1,4 +1,4 @@
-@import "../../styles/custom-media";
+@import '../../styles/shared.module';
 
 .root {
   position: relative;
@@ -63,8 +63,12 @@
 }
 
 .captionBox {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-black);
+  // -webkit-text-stroke: 10px var(--secondary-color);
+  -webkit-text-stroke: 0.3px green;
+  border: 1px solid var(--primary_color);
+  font-weight: bold;
+  text-shadow: make_omnipresent_shadow(2px, 3px, var(--primary_shadow));
+  backdrop-filter: blur(10px) brightness(var(--primary_brightness));
   padding: 1.5rem;
 
   @media (--media-min-medium) {

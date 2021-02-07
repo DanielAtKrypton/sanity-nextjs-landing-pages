@@ -1,4 +1,4 @@
-@import "../../styles/custom-media";
+@import "../../styles/custom-media.scss";
 
 .root {
   padding: 2rem 0;
@@ -47,7 +47,7 @@
   -webkit-font-smoothing: inherit;
   font: inherit;
   display: block;
-  border: 1px solid var(--color-black, #000);
+  border: 1px solid var(--primary_color, #000);
   flex-grow: 1;
   padding: 1rem;
   width: 100%;
@@ -67,7 +67,7 @@
   margin-top: 1rem;
   display: block;
   padding: 1em;
-  border: 1px solid var(--color-black, #000);
+  border: 1px solid var(--primary_color, #000);
 
   @media (--media-min-medium) {
     margin-top: 0;
@@ -75,14 +75,14 @@
   }
 
   @nest &:focus {
-    background: var(--color-black, #000);
-    color: var(--color-white, #fff);
+    background: var(--primary_color, #000);
+    color: var(--secondary_color, #fff);
   }
 
   @media (hover: hover) {
     @nest &:hover {
-      background: var(--color-black, #000);
-      color: var(--color-white, #fff);
+      background: var(--primary_color, #000);
+      color: var(--secondary_color, #fff);
     }
   }
 }
