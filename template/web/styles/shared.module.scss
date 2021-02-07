@@ -63,6 +63,7 @@
 }
 
 @mixin pressable_button_effect($scale_up_factor){
+  transition: transform 50ms ease-in-out;
   transform: scale($scale_up_factor*1);
   &:hover {
     transform: scale($scale_up_factor*1.05);
