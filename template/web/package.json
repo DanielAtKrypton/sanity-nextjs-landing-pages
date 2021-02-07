@@ -19,8 +19,8 @@
     "lodash": "^4.17.20",
     "next": "^10.0.6",
     "next-seo": "^4.19.0",
-    "react": "^16.0.1",
-    "react-dom": "^16.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-inlinesvg": "^2.2.2",
     "react-mailchimp-form": "^1.0.2",
     "react-mailchimp-subscribe": "^2.1.0"
@@ -39,7 +39,6 @@
     "postcss-import": "^14.0.0",
     "precss": "^4.0.0",
     "sass": "^1.32.6",
-    "sharp": "^0.27.1",
     "sitemap": "^6.3.5"
   }
 }
