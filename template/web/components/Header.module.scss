@@ -1,5 +1,4 @@
 @import "../styles/shared.module";
-@import '../styles/glow';
 
 .root {
   position: relative;
@@ -82,10 +81,8 @@ $scale_up: 1.8;
     color: inherit;
     vertical-align: top;
     z-index: 2px;
-
-    @include glow_animation;
   
-    @include pressable_button_effect($scale_up*1, false);
+    @include pressable_button_effect($scale_up*1);
   }
 
   svg path {
@@ -148,7 +145,7 @@ $scale_up: 1.8;
     position: relative;
     padding: 1.5rem 0.5rem;
 
-    @include pressable_button_effect(1, true);
+    @include pressable_button_effect(1);
 
     @media (--media-max-medium) {
       padding: 1rem 1.5rem;

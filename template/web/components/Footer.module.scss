@@ -22,7 +22,7 @@
     color: inherit;
     padding: 1.5rem 0.5rem;
 
-    @include pressable_button_effect(1, true);
+    @include pressable_button_effect(1);
   }
 }
 

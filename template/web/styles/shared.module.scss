@@ -62,14 +62,10 @@
   @return $list;
 }
 
-@mixin pressable_button_effect($scale_up_factor, $glow: false){
+@mixin pressable_button_effect($scale_up_factor){
   transform: scale($scale_up_factor*1);
   &:hover {
     transform: scale($scale_up_factor*1.05);
-    @if $glow {
-      -webkit-text-stroke: 0.8px green;
-      // box-shadow: make_omnipresent_shadow(2px, 5px, $shadow_F); // $shadow_G
-    }
   }  
   &:active {
     transform: scale($scale_up_factor*0.95);

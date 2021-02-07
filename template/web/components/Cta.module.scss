@@ -1,4 +1,3 @@
-@import '../styles/glow';
 @import '../styles/shared.module';
 
 .button {
@@ -17,5 +16,4 @@
   /* margin: auto; */
   width: fit-content;
   white-space: nowrap;
-  @include glow_animation;
 }
