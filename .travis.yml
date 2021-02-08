@@ -12,8 +12,7 @@ after_script:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
 - git checkout master
-- sudo find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex
-  '.' | xargs sudo rm -rf
+- sudo find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex '.' | xargs sudo rm -rf
 - mv ./build/* .
 - mv ./build/.* .
 - rm build -r
