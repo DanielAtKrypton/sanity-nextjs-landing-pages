@@ -12,15 +12,15 @@ after_script:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
 - git checkout master
-- sudo find . ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -o -regex
-  '^./build/studio/dist\(/.*\)?' -o -regex '^./build/web/out\(/.*\)?' -o -name node_modules
-  -type d | xargs sudo rm -rf
-- sudo mv -v ./build/* ./build/.* .
-- sudo rm ./build -r
+- sudo find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex
+  '.' | xargs sudo rm -rf
+- mv ./build/* .
+- mv ./build/.* .
+- rm build -r
 - setup_git_user
 - git add .
 - git commit -m "Push from development branch at Travis"
 - git push origin master
 env:
   global:
-    secure: UJC1ROMjqfxNqKeEGZq4+poq8fUAWyPvvtWDbzgEV0E1lsf2+o75ompoo77Dr0ndbZtjcHIX1zsgEDcWuPxnMSNcCYPRIMJTbFLF7n1drCg1l7GjGwkEklqeIKexbnNieeL1x8peP9Yeyu1NRUZHCdkyF5C83dlFjqA0fGlIlD/J+BxB5HLe+22S52327k+PxIqqBnd+FHNz9RV0L8EscdiYYGToAMUQ4SYShK8v4zWG7SVT05/bttCuZyV93mct6QR+3wrm/oLtPD1CC3vQnIYvmq9oCSzvfHAWryTwSNX2XOrKoUyoCYxEw6qqZ+/9TlYOMrk3P6PCay1FWr/GMlCTSqoQ6MKwYTU8HOIvtIm2WA69u3Ht1codRn6z9o+x2lKYLVC256QwMG2ZiBKJsyVEFuA77htX4KTXrAHAkkFbdJZiVIJRm61D95zqsajGi3M96nmYdqZWBb55wmWUwn8EZwcUWReOqQTvfvYGxvAj7bPv1j0R7bkJwUZiqkCANK4N10ugraalDjvRGADV6TH/MPK7SDrKcLwmUlsvO9NtUSiM2EEXyqMjgCePTWaNuKVptYiFP16KaszV2hUYtj/BbNSeHURp7yMDbMD4tqOcpnVX9SBXi9yLHmJUXmuQOaMhOrIrYAd4uxU4aQaJRz7llKp5+lE2slytBgHBQO0=
+    secure: Hepe9EE8QE6i6uVN2LPEaioCRXLCiWovk97snl3AR9BDEaTbDifyi6UIUi5FWvj1ualwS3l148Kh6H30R/czVWdbVrnUg/2GJRAcCs3/EL+cMjDSnKl9mvl99E/lyJLKTzki9u0mKnZHAKK1SqAk490whrEWMcum07XbujJD03mlGWZcIXSyet5T01Sw3A57rEg3zbfNGnBCAkM/Q20Sjb8+0TDwcJWAh2He+U7HAPjQwBYExpCHxr8/RCoj3HaqKBHiVAPhbhhJgrBiW5Q3GBfRh3BCbV0/qrKPZuA5UHzB6iy2wH8DNZ05dr3nJ8b4OtDbwRz7ufKJNOt0P0J5sTES8DbKzJ8YCP0QGDcpXa5gVeUWPtVoF24vIMEYnoxW2mmee+2woIcjukF9QdhhFFSgomavrBWcsstPXVxI0I2FSyFWTD7OoirPQRRXGjsv5+rV4H+IkNlMLTjlakrubGhwmMY1+knyWv7DbOh/VQakm7MGeaZ0F4yhX1/lsI4NYr5RS7bjigf2HXMXx/Au7bQedbHAy+9ECXkyMNYr6wB30f4NyooJC5VOz/kV6T+qNvzdSOFHOmgTRUWCKAbOjG7cpseqI0mJWPOxJOZUkDThBubSuuVMiBRdPz0IDJIVbhMScEE9WiquQfgl7tjEHNLRI89i6QyXAEEB9Nc7FSg=
