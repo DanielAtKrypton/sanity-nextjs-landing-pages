@@ -1,7 +1,7 @@
 {
   "repository": {
-    "name": "https://github.com/krypton-unite/website",
-    "owner": "Daniel Kaminski de Souza",
+    "name": "website",
+    "owner": "krypton-unite",
     "private": false
   },
   "sanity": {
@@ -17,7 +17,7 @@
   "userInput": {},
   "deployments": {
     "studio": {
-      "url": "https://kryptonunite-studio.netlify.app",
+      "url": "kryptonunite-studio.netlify.app",
       "providerName": "netlify",
       "providerInfo": {
         "buildHookId": "5f47e57faaca5575c559084f",
@@ -25,7 +25,7 @@
       }
     },
     "web": {
-      "url": "https://kryptonunite.netlify.app/",
+      "url": "kryptonunite.netlify.app",
       "providerName": "netlify",
       "providerInfo": {
         "buildHookId": "5f47e57f3b410a70bec59168",
