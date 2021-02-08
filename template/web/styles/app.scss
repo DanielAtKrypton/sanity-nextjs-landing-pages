@@ -11,16 +11,20 @@ a:-webkit-any-link {
     --very_bright: 1;
     --very_dark: 0.3;
     --terciary_color: yellow;
+    --raw_white: 255, 255, 255;
+    --raw_black: 0, 0, 0;
+    --white: rgb(var(--raw_white));
+    --black: rgb(var(--raw_black));
 
-    --primary_raw_color: 0, 0, 0;
-    --secondary_raw_color: 255, 255, 255;
+    --primary_raw_color: var(--raw_black);
+    --secondary_raw_color: var(--raw_white);
     --primary_green: 20, 122, 0;
     --secondary_green: 20, 133, 0;
     --primary_brightness: var(--very_bright);
     --secondary_brightness: var(--very_dark);
     @media(prefers-color-scheme: dark) {
-      --primary_raw_color: 255, 255, 255;
-      --secondary_raw_color: 0, 0, 0;
+      --primary_raw_color: var(--raw_white);
+      --secondary_raw_color: var(--raw_black);
       --primary_green: 20, 133, 0;
       --secondary_green: 20, 122, 0;
       --primary_brightness: var(--very_dark);
