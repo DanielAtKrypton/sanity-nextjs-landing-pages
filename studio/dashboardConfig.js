@@ -36,10 +36,10 @@ export default {
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/Daniel Kaminski de Souza/https:&#x2F;&#x2F;github.com&#x2F;krypton-unite&#x2F;website',
+            value: 'https://github.com/krypton-unite/website',
             category: 'Code'
           },
-          {title: 'Frontend', value: 'https:&#x2F;&#x2F;kryptonunite.netlify.app&#x2F;', category: 'apps'}
+          {title: 'Frontend', value: 'kryptonunite.netlify.app', category: 'apps'}
         ]
       }
     },
