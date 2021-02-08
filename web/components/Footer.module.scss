@@ -1,7 +1,7 @@
 @import "../styles/shared.module";
 
 .root {
-  color: var(--primary_color, #333);
+  color: var(--primary_color);
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
   padding: 2rem 0;
@@ -16,12 +16,11 @@
 }
 
 .item {
-  & > a {
+  > a {
     display: block;
     text-decoration: none;
     color: inherit;
     padding: 1.5rem 0.5rem;
-
     @include pressable_button_effect(1, true);
   }
 }
@@ -29,11 +28,11 @@
 .text {
   text-align: center;
 
-  & p {
+  p {
     margin: 1rem 0;
   }
 
-  & a {
+  a {
     color: inherit;
   }
 }

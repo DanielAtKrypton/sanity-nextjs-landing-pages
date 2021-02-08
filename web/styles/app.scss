@@ -8,36 +8,39 @@ a:-webkit-any-link {
 
 :root {
     /* Typography */
-    --primary_color: black;
-    --secondary_color: white;
-    --terciary_color: yellow;
-    --shadow_opacity: 0.9;
-    --white_shadow: rgba(255, 255, 255, var(--shadow_opacity));
-    --black_shadow: rgba(0, 0, 0, var(--shadow_opacity));
-    --translucent_black: rgba(0, 0, 0, 0.95);
-    --translucent_white: rgba(255, 255, 255, 0.95);
-    --primary_translucent_shadow: var(--translucent_black);
-    --secondary_translucent_shadow: var(--translucent_white);
     --very_bright: 1;
     --very_dark: 0.3;
+    --terciary_color: yellow;
+    --raw_white: 255, 255, 255;
+    --raw_black: 0, 0, 0;
+    --white: rgb(var(--raw_white));
+    --black: rgb(var(--raw_black));
+
+    --primary_raw_color: var(--raw_black);
+    --secondary_raw_color: var(--raw_white);
+    --primary_green: 20, 122, 0;
+    --secondary_green: 20, 133, 0;
     --primary_brightness: var(--very_bright);
     --secondary_brightness: var(--very_dark);
-    --primary_shadow: var(--white_shadow);
-    --secondary_shadow: var(--black_shadow);
-    --primary_to_green: rgb(20, 133, 0, 0.99);
-    --secondary_to_green: rgb(20, 133, 0, 0.99);
     @media(prefers-color-scheme: dark) {
-      --primary_from_green: rgb(20, 133, 0, 0.4);
-      --secondary_from_green: rgb(20, 122, 0, 0.4);
-      --primary_shadow: var(--black_shadow);
-      --secondary_shadow: var(--white_shadow);
+      --primary_raw_color: var(--raw_white);
+      --secondary_raw_color: var(--raw_black);
+      --primary_green: 20, 133, 0;
+      --secondary_green: 20, 122, 0;
       --primary_brightness: var(--very_dark);
       --secondary_brightness: var(--very_bright);
-      --primary_color: white;
-      --secondary_color: black;
-      --primary_translucent_shadow: var(--translucent_white);
-      --secondary_translucent_shadow: var(--translucent_black);
     }
+
+    --primary_color: rgb(var(--primary_raw_color));
+    --secondary_color: rgb(var(--secondary_raw_color));
+    --primary_to_green: rgb(var(--primary_green), 0.99);
+    --secondary_to_green: rgb(var(--primary_green), 0.99);
+    --primary_from_green: rgb(var(--primary_green), 0.4);
+    --secondary_from_green: rgb(var(--primary_green), 0.4);
+    --secondary_translucent_shadow: rgb(var(--primary_raw_color), 0.95);
+    --shadow_opacity: 0.9;
+    --primary_shadow: rgb(var(--secondary_raw_color), var(--shadow_opacity));
+    --secondary_shadow: rgb(var(--primary_raw_color), var(--shadow_opacity));
     --unit: 16;
     --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
     --font-micro-line-height: calc(12 / 10); /* 12px */

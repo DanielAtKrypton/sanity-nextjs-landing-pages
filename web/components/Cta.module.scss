@@ -2,11 +2,10 @@
 @import '../styles/shared.module';
 
 .button {
-  color: var(--secondary_color) !important;
   -webkit-text-stroke: 1px var(--primary_color);
   display: block;
   border-radius: 0;
-  border: 1.2px solid var(--secondary_color);
+  border: 1.20px solid var(--white) !important;
   background-color: transparent;
   padding: 1em 1.5em;
   text-decoration: inherit;
