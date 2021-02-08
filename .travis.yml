@@ -12,7 +12,8 @@ after_script:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
 - git checkout master
-- sudo find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex '.' | xargs sudo rm -rf
+- sudo find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex
+  '.' | xargs sudo rm -rf
 - mv ./build/* .
 - mv ./build/.* .
 - sudo rm build -r
@@ -22,4 +23,4 @@ after_script:
 - git push origin master
 env:
   global:
-    secure: Hepe9EE8QE6i6uVN2LPEaioCRXLCiWovk97snl3AR9BDEaTbDifyi6UIUi5FWvj1ualwS3l148Kh6H30R/czVWdbVrnUg/2GJRAcCs3/EL+cMjDSnKl9mvl99E/lyJLKTzki9u0mKnZHAKK1SqAk490whrEWMcum07XbujJD03mlGWZcIXSyet5T01Sw3A57rEg3zbfNGnBCAkM/Q20Sjb8+0TDwcJWAh2He+U7HAPjQwBYExpCHxr8/RCoj3HaqKBHiVAPhbhhJgrBiW5Q3GBfRh3BCbV0/qrKPZuA5UHzB6iy2wH8DNZ05dr3nJ8b4OtDbwRz7ufKJNOt0P0J5sTES8DbKzJ8YCP0QGDcpXa5gVeUWPtVoF24vIMEYnoxW2mmee+2woIcjukF9QdhhFFSgomavrBWcsstPXVxI0I2FSyFWTD7OoirPQRRXGjsv5+rV4H+IkNlMLTjlakrubGhwmMY1+knyWv7DbOh/VQakm7MGeaZ0F4yhX1/lsI4NYr5RS7bjigf2HXMXx/Au7bQedbHAy+9ECXkyMNYr6wB30f4NyooJC5VOz/kV6T+qNvzdSOFHOmgTRUWCKAbOjG7cpseqI0mJWPOxJOZUkDThBubSuuVMiBRdPz0IDJIVbhMScEE9WiquQfgl7tjEHNLRI89i6QyXAEEB9Nc7FSg=
+    secure: gZJ0l1H0bFsiub0IJyxCfn2tcOBBMXcU09yKire1En8vFloxk1NKXtt773gVQSrWOn1/6fdEy7hj/Sh+h140WvtjyHx8/p3IyBCIfOMdbHgss+bJrWKhzgdj23kynyuPXuw8KXc4SFVwlKuErkMkuqFEP65m9Jmbtlwoc21BCD9B84JHkKwWbg9Ghv/R7UKAWNO2+JvspUf6IADItCvV1iDN69CnlqYbTC5b2L36mgLGUde2mcoRsRjud//Ndt6dI870Y+RXTdMKVi4EwNdr3u5BYVY9bk5NRQIx8bAc3xFBvPUOedsDB/OBaPqEbdfdJXKUm0NlRIeavKie7ywe9m8S2hJ+PZ7jh8N5k2hMCTd/UhaLGSO6xfPi7KFvyKEtKbdy1ooag77ZKQYrYRKGPM0hVFc419s5zRiKCk8H675f9LskTPZuLC/eU57tG9RBPZ5XaWn3Vt+yW1PaJRuWrIiJayOyaM0lJTaOEoPMmjAXSW7TKmP9/nMQwSRAw7dMa6l0lX0tHt2Xo72LiXvpl5F8NGz6zLvd7qwDzLQmfXh0uLcVH0woeyIPaf1ZEvscW2/r9D0LGErYOpWmXxLVCvUro3vpHtheERP2g0zuxEU7D5mK5yAPR+X5jQTiR59CJGr8RpdWiI5ihwf1fXAjK1DH5abzvN4BR2D6PJIFKv4=
