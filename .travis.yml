@@ -15,7 +15,7 @@ after_script:
 - sudo find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex '.' | xargs sudo rm -rf
 - mv ./build/* .
 - mv ./build/.* .
-- rm build -r
+- sudo rm build -r
 - setup_git_user
 - git add .
 - git commit -m "Push from development branch at Travis"
