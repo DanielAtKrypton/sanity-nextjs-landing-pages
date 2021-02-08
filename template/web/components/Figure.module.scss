@@ -1,7 +1,6 @@
 @import "../styles/custom-media.scss";
 
 .root {
-  // @extend :root;
   position: relative;
   padding: 2rem 0;
 
@@ -37,7 +36,7 @@
   margin: 0 1.5rem;
   max-width: var(--width-medium);
 
-  & figcaption {
+  figcaption {
     width: 100%;
     box-sizing: border-box;
   }
@@ -46,7 +45,7 @@
     margin: 0 auto;
     padding-top: 2rem;
 
-    & figcaption {
+    figcaption {
       position: absolute;
       top: 0;
     }
@@ -64,7 +63,7 @@
 }
 
 .captionBox {
-  background-color: --secondary_color;
+  background-color: var(--secondary_color);
   border: 1px solid var(--prima_color);
   padding: 1.5rem;
 

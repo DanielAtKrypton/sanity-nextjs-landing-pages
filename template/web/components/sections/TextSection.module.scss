@@ -1,4 +1,4 @@
-@import '../../styles/custom-media.scss';
+@import '../../styles/custom-media';
 
 .root {
   padding: 2rem 0;
@@ -6,11 +6,9 @@
   @media (--media-min-medium) {
     padding: 4rem 0;
   }
-}
-// .root:nth-child(4) > section:nth-child(1) > div:nth-child(3),
-// .root:nth-child(2) > section:nth-child(1) > div:nth-child(3) {
-  .root section * {
-  text-align: justify;
+  section * {
+    text-align: justify;
+  }
 }
 
 .article {
