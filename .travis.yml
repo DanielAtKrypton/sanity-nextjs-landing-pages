@@ -10,15 +10,15 @@ after_success:
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 after_script:
 - source ./scripts/create_branches.sh
-- create_branches *
+- create_all_branches
 - git checkout master
 - find -maxdepth 1 -name node_modules -type d | xargs sudo rm -rf
 - find -maxdepth 2 -name node_modules -type d | xargs sudo rm -rf
 - find -maxdepth 3 -name node_modules -type d | xargs sudo rm -rf
 - find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex '.' |
   xargs sudo rm -rf
-- mv ./build/* .
-- mv ./build/.* .
+- sudo mv ./build/* .
+- sudo mv ./build/.* .
 - sudo rm build -r
 - setup_git_user
 - git add .
@@ -26,4 +26,4 @@ after_script:
 - git push origin master
 env:
   global:
-    secure: BbFakryk97J0RB/vLrMypnMfkORLTGmq+64lV0cQoKibq6lvDDDLrFdHZTKSOuzIkdp3zeVhjWlBQNfLnc7WZ/DAUmSMhhoC4OWOBPjefJ1ykkSGGUNy1Fr4P1nE/dl5hgey3/1ZCoAT1zbIBdjHUDO17ng3+N0QVRLluztmehDZoYFtmwRSKhRlyVg8WZvOusT4NtqQdbrSK0vPsJLvVh+QtdoohGzStTWViBDbHCwkX98o6F8RWNTiWMJUvfNfTaMouIy1y+rq/Cg0otN4QgDYq86AsELVsqbzxItYbejTX2XqVqEnesp+qk2+CaZSMdn3EQqNW59x1+MnrufdSoD+23vO0nRro/46W6VlXDIgV7vgmrFdqH1wCP7XJlI3Ewcudy/XRkTOYk2iDfZYNX5yS4xD/QWJ4YGwl4YMNgxSdaSRMA4j7cO6aSDSQQHvCqybBRNqpod/9z+sbTc2Gtl6pA5eXpGuCUT0RO/4CllTwZE1NFKsfj+H97OlUwlHj4edP/I1hj+2G/yRlhHtrCC1jhswejVJJSp5VJvXkvN4/1u2+rmYNBfYrFI0Htgffuc+TI9/sB3Mz5UMqyY0wf1u90wdMeWPvKk8MDgxf5SXqAv3O25UK/VcXnyWElR+CYzzIbKQB+Ms5OA+B2QbOwOrBHcQwWlPVt5qRvies+w=
+    secure: mCxoTovJJf+dO2eF4BBubLUNd/bunkQEPGUYRBwj6RRtizILbORWQtEeNR6rmPT3NGZo0lJLKR18XNTNMCVTcGizHHnfJY2Ic6T4QIOTQX4Fiqz8bpXEvztjXtuL6CiFkSQiyffQ6vVCbu9ahc9Ts9su9xEJzpoHpy2yOmMw5RndvYn/+nt/24dCwKhZ+8+BI5LZ8cOdZxZJsE94FILVjwCT9LfvhNqYhsg54U0icaxGPZf3f7S0svTdme7H7xAnJ7Y0u36tuqkBishHOfJbP2+OFIW8JhxkOpcSiZrWfSDqjSM+1BEX9JixQ2UtGOQXohvZbIDJrV/QEA86La6iB7PyLK/3Mk5RjABzhUEn3wOYYHNjr6QEskadtuH3VM0Hzqs8S+R91rHdzGEJlgnflGFNlGu/4Q61wcEIc1kWLYFTNmkV/4TGPGqthFg4Gt578NAnNv/lTtcAxdNa/vJZwDnVENDR+gxu7UEPhn6eFtoiFSH6ClbqCgOBkdjCeTnF/prS8TNPBTKAaaTKIU7eiz74TCTzHZqHcjr3OWdMctGZRV3FqMYNeMTb5qbIQh4MeW44czr3P+8801Rrgo7ksVPcEVFGi3AaxOeyBKtQbwShDu0NK01T84so5X500IDiJt8TfHprvmMEAqaqdyZExtQvsStjc+o7ZZ6WHv3LquQ=
