@@ -3,16 +3,17 @@ function setup_git_user() {
   git config --global user.name ${USER_NAME}
 }
 
-function create_all_branches()
+function create_branches()
 {
     # Keep track of where Travis put us.
     # We are on a detached head, and we need to be able to go back to it.
+    local branches_wildcard=$1
     local build_head=$(git rev-parse HEAD)
 
     # Fetch all the remote branches. Travis clones with `--depth`, which
     # implies `--single-branch`, so we need to overwrite remote.origin.fetch to
     # do that.
-    git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+    git config --replace-all remote.origin.fetch +refs/heads/$branches_wildcard:refs/remotes/origin/$branches_wildcard
     git fetch
     # optionally, we can also fetch the tags
     git fetch --tags

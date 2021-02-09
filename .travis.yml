@@ -9,8 +9,8 @@ after_success:
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 after_script:
-- source ./scripts/create_all_branches.sh
-- create_all_branches
+- source ./scripts/create_branches.sh
+- create_all_branches *
 - git checkout master
 - find -maxdepth 1 -name node_modules -type d | xargs sudo rm -rf
 - find -maxdepth 2 -name node_modules -type d | xargs sudo rm -rf
@@ -26,4 +26,4 @@ after_script:
 - git push origin master
 env:
   global:
-    secure: BvTi0lh5eyirUShRfV/ufiMVIyvEcVaiJOTaOSkhp50hM6t4o5XTq/fB+AXEvhTebY8rPh4zeLFRRthgcJKXJ3BEm8KrRLOMVhvzUytFLhVXxzgWwdJJwl22o/Q2cf+y4WX4mKB9ITfg3dBYH95Z0gVaOJLgPIb2fCYG77yBkl1KdFOlTav7NqmT9mPxmYka0svLvnMlqLyeaBTn3XPY2wTWElZ4uZtita/yCkH14YgcfR98+/CLEkrtSgvE/dDCm9W8u8sqWDWZNs33/7PBeCMO8T9r+4Hr05c8OE1AAhQtCNJsQQxZGFi6bPAL90xtTXUSNNEV66Fayblk7XSkjzGv0aMCiiRfbPCKkbGRnhMrMoKnTH/SghPfUU1xevxrMPT8wNXHrwbLp/iaAezrsmwFhvNM3fx6Y47mlR6l/D1NnIVkIsjIYr3mtLjV68rGdb7WM7X21QnTUPvJCq/MC28ZD7CjP6+RIyCHecYYOrvLe+4PO/xXib9jlxWr7qdvuHFLQA8lXCmpRmvvemwMmw04MjPbvWKxK7qoYbxq5ahC+nmfmwepKGRozKMyy0GTZS40RrXy370i3vFchbEmiXbDtRgAo+ubpEMjb3rwkge4dfUK6RXrP6G4D5VNcxYjYRmR30WHWyILWttNuFH06ZqyrShy0mlfTdPaCJoVb38=
+    secure: ZPOfrxBWiw9cJjC6fS4N6awSV6qVCZHMqBtC79IifaGZ4SQ+fRbmU92CG8loP+nX1NG2c2Bj5IEfp/uLgrofIHT3isgEnUddbtTCEDk8+zRsWVrVINNXb/nsw4iRSnu7UyvS5SFvj6ubm5dY+yPlbuiou/IJdTGPhAaO2NhSMrYwAy95q5k97zkZIpUTil99JMOHGra+eJL0kHU4HNrtJrSvKqamWF7ha/0Zk+gmwpKUM/imYrd9Q38ngxOkCePvUp5z0HMFlnj1Y/H1pdc1RpoorXxKGb6GXa5sA1VRNpPBn5AGcMxutW/3XqfSnmARva/F8/9U+k4IMAMmdYYV+TkTiqR6qyV+W/v3Msh4FkOkWCQyKLH63ROBlJEC1QOO2UDttIzrX6Pp59uFFVP2cix12pevjW0vI/BQHDwd4bQiM3imrWmopglkvodAPMK76gBHQnRJ30oyrv47+jRx6JLKcmT1QoKasjAmKpVas0KIkJGMjlceSbvxeEup4iJ5+H7E+Q5E4+TxJCNjAqCNABQgerD1decwUMV9xI7LAZDezxnBRZanJt1KYCZMLsuRhC4Kqxz1NzH9frIHYMjcSBy/UyD1ry6QlowoLBtSguSKmx0uYK3jlzuM9OeeF5OQtrKuGH7rbUP02PtH/sGAMRoAHFvsQXry85p+/EpQJPo=
