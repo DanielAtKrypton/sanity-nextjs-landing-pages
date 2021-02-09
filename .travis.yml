@@ -12,8 +12,11 @@ after_script:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
 - git checkout master
-- sudo find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex
-  '.' | xargs sudo rm -rf
+- find -maxdepth 1 -name node_modules -type d | xargs sudo rm -rf
+- find -maxdepth 2 -name node_modules -type d | xargs sudo rm -rf
+- find -maxdepth 3 -name node_modules -type d | xargs sudo rm -rf
+- find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex '.' |
+  xargs sudo rm -rf
 - mv ./build/* .
 - mv ./build/.* .
 - sudo rm build -r
@@ -23,4 +26,4 @@ after_script:
 - git push origin master
 env:
   global:
-    secure: gZJ0l1H0bFsiub0IJyxCfn2tcOBBMXcU09yKire1En8vFloxk1NKXtt773gVQSrWOn1/6fdEy7hj/Sh+h140WvtjyHx8/p3IyBCIfOMdbHgss+bJrWKhzgdj23kynyuPXuw8KXc4SFVwlKuErkMkuqFEP65m9Jmbtlwoc21BCD9B84JHkKwWbg9Ghv/R7UKAWNO2+JvspUf6IADItCvV1iDN69CnlqYbTC5b2L36mgLGUde2mcoRsRjud//Ndt6dI870Y+RXTdMKVi4EwNdr3u5BYVY9bk5NRQIx8bAc3xFBvPUOedsDB/OBaPqEbdfdJXKUm0NlRIeavKie7ywe9m8S2hJ+PZ7jh8N5k2hMCTd/UhaLGSO6xfPi7KFvyKEtKbdy1ooag77ZKQYrYRKGPM0hVFc419s5zRiKCk8H675f9LskTPZuLC/eU57tG9RBPZ5XaWn3Vt+yW1PaJRuWrIiJayOyaM0lJTaOEoPMmjAXSW7TKmP9/nMQwSRAw7dMa6l0lX0tHt2Xo72LiXvpl5F8NGz6zLvd7qwDzLQmfXh0uLcVH0woeyIPaf1ZEvscW2/r9D0LGErYOpWmXxLVCvUro3vpHtheERP2g0zuxEU7D5mK5yAPR+X5jQTiR59CJGr8RpdWiI5ihwf1fXAjK1DH5abzvN4BR2D6PJIFKv4=
+    secure: BvTi0lh5eyirUShRfV/ufiMVIyvEcVaiJOTaOSkhp50hM6t4o5XTq/fB+AXEvhTebY8rPh4zeLFRRthgcJKXJ3BEm8KrRLOMVhvzUytFLhVXxzgWwdJJwl22o/Q2cf+y4WX4mKB9ITfg3dBYH95Z0gVaOJLgPIb2fCYG77yBkl1KdFOlTav7NqmT9mPxmYka0svLvnMlqLyeaBTn3XPY2wTWElZ4uZtita/yCkH14YgcfR98+/CLEkrtSgvE/dDCm9W8u8sqWDWZNs33/7PBeCMO8T9r+4Hr05c8OE1AAhQtCNJsQQxZGFi6bPAL90xtTXUSNNEV66Fayblk7XSkjzGv0aMCiiRfbPCKkbGRnhMrMoKnTH/SghPfUU1xevxrMPT8wNXHrwbLp/iaAezrsmwFhvNM3fx6Y47mlR6l/D1NnIVkIsjIYr3mtLjV68rGdb7WM7X21QnTUPvJCq/MC28ZD7CjP6+RIyCHecYYOrvLe+4PO/xXib9jlxWr7qdvuHFLQA8lXCmpRmvvemwMmw04MjPbvWKxK7qoYbxq5ahC+nmfmwepKGRozKMyy0GTZS40RrXy370i3vFchbEmiXbDtRgAo+ubpEMjb3rwkge4dfUK6RXrP6G4D5VNcxYjYRmR30WHWyILWttNuFH06ZqyrShy0mlfTdPaCJoVb38=
