@@ -13,7 +13,10 @@ after_success:
 - find -maxdepth 2 -name node_modules -type d | xargs sudo rm -rf
 - find -maxdepth 3 -name node_modules -type d | xargs sudo rm -rf
 - find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex '.' |
-  xargs sudo rm -rf && sudo mv ./build/.* ./build/* . && sudo rm build -r
+  xargs sudo rm -rf
+- wait
+- sudo mv ./build/.* ./build/* .
+- sudo rm build -r
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 after_script:
@@ -23,4 +26,4 @@ after_script:
 - git push origin master
 env:
   global:
-    secure: g+v3OuHfjVWWOR1Vdlj+YxARS5FTqgM8xvvr/89rGMpMA1hFvc56osnqZdHyWc7qp08qck2aPc4rPkrz5JQU6ltLtXvamSp0Yd2z4Ee4h/J6We+lR58Uzt7iuxKaiaF2/lfkfezYr5u0NJGUy8iiFOPp4YukEcdukUy3lBaNdBNuP8WD+wgveOUTKE7CIq4IOZ5un5ppEJE8JxA7d3lIkykd84gAK0P72rmFH4hkrTVgM4dvN9Dq+dYniA6REDaBkuaY6FP2XbqFWO3+WbMW3g9M6TX5fdARr7sP1gClVAXJGsrLTW1YNFCO95tTeYAo9f/ulYQPdh1LPeC6T9momgJk19ZvZbA5ji96nSGYYlMoS6JG7strG0djaXEXp5YAG98qvvWe1/yFSfj57Wiczff1gzjFGoUQ4PhXCoh2eD9XiS31gKmGDzyR+alNAo1hRmgQzySdHZ291yFdlqjMz6hMdhMxlsOFXYdqOyJr/V93p83SpJweUAjcfPWSpxqVBG3QGmNB35AbtTOMxxE5wqAcdthnZ++Z/UHyg+ZNMN54Hl9O4NajOgK3RAH7sYWH9OXnwYowKw7svModWYnnQ0jIczahj/84GUnigNIPh4ASoRQ+xaXXAFkawBye1MJEL7ExeWt8xZ8unH3gNcNktBFOzaN4NgMPrJk1FASFRNQ=
+    secure: dJrtvAiFsxvn+OZWad06g7ZIDFSXfcPRABXs5GKJo4t12irP5VbTHHXodelY9UA0U4wjA/7pWJv3bkHly71et7LO4zLAiKc1DhlrmuZb8LvRI7B1fiGZJ946iVG5eHxqHURokKTStow8gGIlnKtluB09K+1j/ZXTMjJgxHjYufVVwLNIT05ZDrmBEn8qimKuxRztviGeQxo0B6Szj4TuY64foAXLw+UV/PwjuS5Wpdavoyzjk+EG4qecTJubKaSHhSl/ip1NzIdKirVZjronje1ZAN9Bn4kb2tyuSAb7iVu3I4Nq4sKNjuiV4wZsdzgXRam0CRG0CJoOos+bUxVGo6Vyc9JEmR5xKu0REAQ8UifIt75LVKktjfSTpzU1d4aU4P+UUv2tDtaZR2FvoNYwfLeisAKkS1mYyH5QXMiR1rmIdRP7qLE9EZ3ALiNoRo6bjqaGG1z34w3V0MiI9LAnGOuaCup5MaEnmSduHXaGzTyQ1tkAeKCCUtlkK7OFEokVjsLCDOtN/RlEKfCYiLhdk2ZGZr33kGE4ipk+03zfx8HGC93+1InTww4SyIRrdmzXRZXMlGfNI22qt/bz6DzJ23ZJuioRkVztnS4ec+4IvjawUAUKrdW9hydfK/lmhBBM0poQVt2RRkB4Fa7ni6Qn36CaerdpskMsLMV8KyscpUs=
