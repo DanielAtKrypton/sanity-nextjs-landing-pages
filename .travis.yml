@@ -5,6 +5,7 @@ install:
 - npm ci
 script:
 - npm test
+after_success:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
 - git checkout master
@@ -13,10 +14,8 @@ script:
 - find -maxdepth 3 -name node_modules -type d | xargs sudo rm -rf
 - find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex '.' |
   xargs sudo rm -rf
-- sudo mv ./build/* .
-- sudo mv ./build/.* .
+- sudo mv ./build/.* ./build/* .
 - sudo rm build -r
-after_success:
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 after_script:
@@ -26,4 +25,4 @@ after_script:
 - git push origin master
 env:
   global:
-    secure: JxOoA1zqu0Jq43mDbrjgcMNQ1BGTpLG4DQ7ezemM34e68iH7mt+ZDvNH8Lu/PHRuVpr06Y8ifmcsMMBgRV667fbTOeTri79eprv57nNrqm67rINCRWHoCmisiPaRBwjiuBK1qNMHWyWqq1//na8nQxujNXW9xYa/fha/fA/0eDY6mNkrRYRDG9n++H1tssncGbkBEceezZJmgzpWgzSVblTTGHvazpGWia4KUIb6Fg3lXqpiWPsqhiCic9IUsTGiILf+jNUY3L+bH0Yq/p4xI+g6U1OOYMk9tkg4NdL4Pt0iWL1jrQFhBp5nzyMGXxnEeBh9U9nVKJ2RNwImio27cYMZW1lnRkIHSJuvOCqsPMk8RhqH5K2uenDOXUUIyfuJD4d1DEBfFaDC352ckbzLBS6M3Bg/0++DDth2vwJ/XXWrTFBLrnqrV3Y7KexykJTPR5qCAGyJzCXIq0b/ylWSkJfqxm8ynmgwCK6x20JEARQG5b3tzzOZdTcRwQek872Gbzuvf6TTVsTR8pL5smphjwFEvQX55gJzCFcyOpdWnnXVnGh2a8ZgQjvwXFx39wHQhLqGMVNQ0tBiRxGygWDS/4mcqhrQOpsC7t60ky6mGkfuZxw8rtUjwP61fpHysNl8OBT31aHr8YDTaRY2DNk/Yi7Omg8Nyve3vVl0vRmP1rQ=
+    secure: fs6Z0c7GjL83Wov6A4ewNLQv74oYBf/SY7P77RFQA70W835FaPYsLbEb/NlQCaRP7F0sF2XxoDe/RVhjy1xVSX0rbzH1FdUjB8pos9przNh+xm/gN3oY9GACuIKErM4qaanC5NC4jsgOawSELT+4hQQUUNJF0BU8P0EdiF1qvqMpeI5HsIsJMFhGVj2je1ki8an9iiuTipdGtSiosGYzHLhNGc1O4GzCRL67RYrPLPc6a7zbagsscaRczI3HHF8cvr7ek9fcRV7Y7wCs2B7soXXzk4ZPJR+nJOdBIXUyvUCt/a9aWkOHX8xI//bP8sd2VY088iieMM08LJC/4hYJLPncY9JxUoGgsw0MiorXsC4gFuB5V9sZOm1wWy0L3Bng+isvZdfsR7T1JkZEy3iTwgAokU8y/xCPrSZyEr1oVGPczW85DmkmZP2cPDlW6sZXMZu2qxSpenhfO/YvhaLLU/o+MwB8JjcJivFxZOb9RWMbUeHIkWTWLbtSdgEutINphfBWUuZSAdYMk+P2Mql/Y2eZDMoV9xG7QvGxMvHOcxptX9QnAlpjAprZiQDZCCpXdplUMRPvKoRMCAy8KHVIZFCqlFsNLV8KyIP2GWuOVOaTnUw8N31w2kB0zVvVUwQbskNh0cyHBO/iQIcLG2E5QywAzzw06LZZHuoRFuAMePc=
