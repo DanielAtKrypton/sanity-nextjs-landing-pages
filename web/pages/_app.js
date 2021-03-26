@@ -1,4 +1,5 @@
 import React from 'react'
+import Route from '../pages/Route'
 import BaseApp from 'next/app'
 import client from '../client'
 import '../styles/app.scss'
@@ -42,9 +43,9 @@ class App extends BaseApp {
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    // const { /*Component,*/ pageProps} = this.props
     return (
-        <Component {...pageProps} />
+        <Route {...this.props} />
     )
   }
 }
