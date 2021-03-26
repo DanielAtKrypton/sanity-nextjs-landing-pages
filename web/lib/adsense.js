@@ -1,0 +1,1 @@
+export const DATA_AD_CLIENT_ID = process.env.DATA_AD_CLIENT_ID
