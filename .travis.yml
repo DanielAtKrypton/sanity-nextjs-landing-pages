@@ -5,10 +5,6 @@ install:
 - npm ci
 script:
 - npm test
-after_success:
-- git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-after_script:
 - source ./scripts/create_all_branches.sh
 - create_all_branches
 - git checkout master
@@ -20,10 +16,14 @@ after_script:
 - sudo mv ./build/* .
 - sudo mv ./build/.* .
 - sudo rm build -r
+after_success:
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+after_script:
 - setup_git_user
 - git add .
 - git commit -m "Push from development branch at Travis"
 - git push origin master
 env:
   global:
-    secure: Flxg3DIWLGPelSukWUzOdzvIJa2/Mw1AmyXed8uyVPcl2rhW9nqlpwsyuPDQ2o5tkXKPtYHvtOr/jVkng9feLULcKN9N5fIIO+tLPajQMmARXlkoy7RrSs/EFsvcuLwHiyQCjJyb/pKjTs5+WZcpLLeXboSsFjC0sT+ZQY+DBoOAUQbkezmv1ivzw+FgXvWM5nsVdh2kpKNN2BThuZx//TZvHzxun9TH1OTSE4dKDQqrfxsV/0kE0/x1GAM1+O7NlVHaoJuf5zzFzeid1N3Xt/H1Eo+Mdregvwp2AIAC6BVYTMDUsUlYNrmIcTVZGweyGGw7vlfhZvg2N8O7tBDi619yNVc5KO4O9zD6Tel/bRErdpwJhWyY6ghEPJyJQfXZGCAtBXWJWXHZ170jq19ZjNhfRMKPyJK2FAJQIPVM81ql99QJjM/WT4RG293hVkKTNulvi/NJ1jzZPx2BdbJCGjX8k6XPrk7Avn4ZaFpEQ/9Ni6Ou0vFz3EQIm4fCHil4zGzWAjmkB5PY3GPi3bZp87a6ZhZ4QetEovmk7NvgPCKJvegtkMPHC9zkM9l12Uav5oMQlqdP82rnECTXmk9c0CXuj0P6/4Glwe4Ho08spDDyozXGLZzM5LODuinVVf7Atwdy1BN5M5yWdibZfdCsr7d9xsQA+alC3BP9eE79EDE=
+    secure: JxOoA1zqu0Jq43mDbrjgcMNQ1BGTpLG4DQ7ezemM34e68iH7mt+ZDvNH8Lu/PHRuVpr06Y8ifmcsMMBgRV667fbTOeTri79eprv57nNrqm67rINCRWHoCmisiPaRBwjiuBK1qNMHWyWqq1//na8nQxujNXW9xYa/fha/fA/0eDY6mNkrRYRDG9n++H1tssncGbkBEceezZJmgzpWgzSVblTTGHvazpGWia4KUIb6Fg3lXqpiWPsqhiCic9IUsTGiILf+jNUY3L+bH0Yq/p4xI+g6U1OOYMk9tkg4NdL4Pt0iWL1jrQFhBp5nzyMGXxnEeBh9U9nVKJ2RNwImio27cYMZW1lnRkIHSJuvOCqsPMk8RhqH5K2uenDOXUUIyfuJD4d1DEBfFaDC352ckbzLBS6M3Bg/0++DDth2vwJ/XXWrTFBLrnqrV3Y7KexykJTPR5qCAGyJzCXIq0b/ylWSkJfqxm8ynmgwCK6x20JEARQG5b3tzzOZdTcRwQek872Gbzuvf6TTVsTR8pL5smphjwFEvQX55gJzCFcyOpdWnnXVnGh2a8ZgQjvwXFx39wHQhLqGMVNQ0tBiRxGygWDS/4mcqhrQOpsC7t60ky6mGkfuZxw8rtUjwP61fpHysNl8OBT31aHr8YDTaRY2DNk/Yi7Omg8Nyve3vVl0vRmP1rQ=
