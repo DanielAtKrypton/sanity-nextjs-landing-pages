@@ -15,6 +15,7 @@ after_success:
 - find ! -regex '^./build\(/.*\)?' -a ! -regex '^./.git\(/.*\)?' -a ! -regex '.' |
   xargs sudo rm -rf
 - xarg_child_pids=`pgrep -P $!`
+- echo $xarg_child_pids
 - wait $xarg_child_pids
 - sudo mv ./build/.* ./build/* .
 - sudo rm build -r
@@ -27,4 +28,4 @@ after_script:
 - git push origin master
 env:
   global:
-    secure: C7eH1hxxG9ZHZnxEJwFKTOJAcgfUiqTCbv6uonUmTSTlRE7j8E13vHWpqEOXJ8UKsDuqU+r8ytG6gcRaXvJdZuaolt58snUt3Gt+aiXSzB3iMh95N8k2AXkTLbfaT+NzFv7g/zqmwjK3k9IhLMYcrCEPpWi3v99q0HRLA+ESqX3GQ8dTBBO5wv/VbcHrIYbliteUAyYCxGq+ZrL4dT99ceer2H8I8NavVZXdodkHYrSzFfw5Vq8rBPQMWY/6trXKQ3yonnFCe0UXM4h4rQ4ETEBgERiHuZpR1+GHdZU4uo6xw0EyUPJaya4Ig+sT+kNgykDP2gEkueQGcarweTu4dQixUpuG272gdpjJI50OxrIIQzAvDgefVV4F+IP8gFemO78dmZLqWJUs1feTr802Ajbntm8eMnPn7mTvJBd6yknLMN6EvP8E5p9DSSqBGLLnP12/zT5qi4pJQpzJvXlvp+EolnoQb7VTtZto/4WLqDXovqAtP7cTSX1Cohbx4R//kbkcyT+c2ohzANC7BRSkNJDxA/YBSVbkev03Ro4sGPWhkhfCyOTnrF3WknOUUdm0wAygblRAgp2xQMF54nvBo1XNGz7yeH4AGx5leH7uLE1GLnVfqMJKfbEPNi7JYOl8I5V+/wCv1iUWDZ8cczFWYOp0+lrQeKYYKM+SPWtEGRs=
+    secure: S6M9Qp43DeEF7KTeiuShiN30X75dc8AbAgMd8QysdpgjIrOx83PjWnkC3jjadWl0PNSWyoLlM6ZL/HnB1EhrUPXyOC0HWMxs70x4doEEUiv6Y7Eab6/kSz5qOTMMal25KllSVaqCRfqiNYHpZbKQTKaDKObKtIRIwf1nf+pdlrrS3d9BrMdU52BW2c/m3OwAV5VzKSji01OlWniJIrRQ0WdF6kC1AXRUbGFGMHvY8z3ksn8WDFQk4d1IL5d/SKxcjc17vs2VwtNR9dCZX+dsNC/BGXal4vV+MX09SWYVttJRZL1umsNQLwejkXTnR5LEAb50pC3+WlUnynMqXHZfyn/dDGl2GlgaQ0ZTXseN2x6f/qdbc2krqqHRCLQAmdjy/OvLYh9Qo6X4S47p0fi8T96vrEO4qs4Hb91iFLA5W9N4x+2yev6NYmBIn/1GM6btn9HTN2vBecZfHaTy/lXd5NU9U1l0z+uI9X1ZAzMYkMJlvZFnaaqvYVtd8sPRNjZINGGSIUc2f1HbgDAEWwgZJPwN68Aoy8IiuC1JCQM+QZDLiK3cma99w8uY/4EILaySLVMYxcadX7p3T7d6g5nG+a0aTZIbh3TKVid59Rki09/AeFBFnoppVntLf8jwvXvI01eM09XLZWjI9815PjmFr26Gc0lb7ZVkTcyp2zzy6pc=
